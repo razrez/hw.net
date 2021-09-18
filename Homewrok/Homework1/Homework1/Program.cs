@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Linq;
 
 namespace Homework1
 {
     internal static class Program
     {
+        
         public static void Main(string[] args)
         {
             var result = 0;
@@ -11,21 +13,15 @@ namespace Homework1
             
             var operation = args[1];
             var val2 = int.Parse(args[2]);
-            switch (operation)
+            result = operation switch
             {
-                case "+":
-                    result = val1 + val2; break;
-                case "-":
-                    result = val1 - val2;
-                    break;
-                case "*": 
-                    result = val1 * val2;
-                    break;
-                case "/": 
-                    result = val1 / val2;
-                    break;
-            }
-            
+                "+" => val1 + val2,
+                "-" => val1 - val2,
+                "*" => val1 * val2,
+                "/" => val1 / val2,
+                _ => result
+            };
+
             Console.WriteLine($"{args[0]}{args[1]}{args[2]}={result}");
         }
     }
