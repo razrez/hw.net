@@ -34,24 +34,12 @@ namespace Homework1
                 return 2;
             }
 
-            var result = Calculate(val1, operation, val2);
+            var result = Calculator.Calculate(val1, operation, val2);
 
             Console.WriteLine($"{args[0]}{args[1]}{args[2]}={result}");
             return 0;
         }
 
-        private static int Calculate(int val1, string operation, int val2)
-        {
-            var result = 0;
-            result = operation switch
-            {
-                "+" => val1 + val2,
-                "-" => val1 - val2,
-                "*" => val1 * val2,
-                "/" => val1 / val2,
-                _ => result
-            };
-            return result;
-        }
+        
     }
 }
