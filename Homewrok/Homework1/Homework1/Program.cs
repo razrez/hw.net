@@ -5,7 +5,14 @@ namespace Homework1
 {
     internal static class Program
     {
-        
+        private static string[] ExpectedOperation = new[]
+        {
+            "+",
+            "-",
+            "*",
+            "/"
+        };
+            
         public static void Main(string[] args)
         {
             var result = 0;
