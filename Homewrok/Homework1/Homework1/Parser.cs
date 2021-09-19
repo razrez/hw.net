@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Homework1
 {
-    internal static class Parser
+    public static class Parser
     {
         private static readonly string[] ExpectedOperation = new[]
         {
@@ -27,6 +27,7 @@ namespace Homework1
             }
 
             if (((IList) ExpectedOperation).Contains(operation)) return 0;
+            
             Console.WriteLine(
                 $"{args[0]}{args[1]}{args[2]} is not a valid calculation syntax. "
                 + $"Supported operations are "
