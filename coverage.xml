@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SolutionRoot CoveredStatements="57" TotalStatements="57" CoveragePercent="100" ReportType="Xml" DotCoverVersion="2021.2.1">
+  <Project Name="Homework1" CoveredStatements="33" TotalStatements="33" CoveragePercent="100">
+    <Namespace Name="Homework1" CoveredStatements="33" TotalStatements="33" CoveragePercent="100">
+      <Type Name="Calculator" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
+        <Method Name="Calculate(int,string,int):int" CoveredStatements="10" TotalStatements="10" CoveragePercent="100" />
+      </Type>
+      <Type Name="Parser" CoveredStatements="15" TotalStatements="15" CoveragePercent="100">
+        <Constructor Name="Parser()" CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        <Method Name="TryToParse(string[],out int,out string,out int):int" CoveredStatements="14" TotalStatements="14" CoveragePercent="100">
+          <OwnCoverage CoveredStatements="13" TotalStatements="13" CoveragePercent="100" />
+          <AnonymousMethod Name="(string,string):string" CoveredStatements="1" TotalStatements="1" CoveragePercent="100" />
+        </Method>
+      </Type>
+      <Type Name="Program" CoveredStatements="8" TotalStatements="8" CoveragePercent="100">
+        <Method Name="Main(string[]):int" CoveredStatements="8" TotalStatements="8" CoveragePercent="100" />
+      </Type>
+    </Namespace>
+  </Project>
+  <Project Name="Homework1.Tests" CoveredStatements="24" TotalStatements="24" CoveragePercent="100">
+    <Namespace Name="Homework1.Tests" CoveredStatements="24" TotalStatements="24" CoveragePercent="100">
+      <Type Name="CalculatorTests" CoveredStatements="8" TotalStatements="8" CoveragePercent="100">
+        <Method Name="Calculate_Operation_IsCorrect(int,string,int,int):void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
+        <Method Name="Calculate_Operation_IsNotCorrect(int,string,int,int):void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
+      </Type>
+      <Type Name="ParserTests" CoveredStatements="12" TotalStatements="12" CoveragePercent="100">
+        <Method Name="TryToParse_Return0(string[],int):void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
+        <Method Name="TryToParse_Return1(string[],int):void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
+        <Method Name="TryToParse_Return2(string[],int):void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
+      </Type>
+      <Type Name="ProgramTests" CoveredStatements="4" TotalStatements="4" CoveragePercent="100">
+        <Method Name="TryToParse_Return0(string[],int):void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
+      </Type>
+    </Namespace>
+  </Project>
+</SolutionRoot>
