@@ -1,29 +1,14 @@
-name: .NET
+image: Visual Studio 2015
 
-on:
-  push:
-    branches: "**"
-  pull_request:
-    branches: "**"
+before_build:
+- nuget restore
+- choco install opencover.portable
+- choco install codecov
 
-jobs:
-  build:
+build:
+  project: CodecovProject.sln
+  verbosity: minimal
 
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 5.0.x
-    - name: Restore dependencies
-      run: dotnet restore ./hw1/hw1.sln
-    - name: Build
-      run: dotnet build --no-restore ./hw1/hw1.sln
-    - name: Test
-      run: dotnet test --no-build --verbosity normal ./hw1/hw1.sln
-    - name: Codecov
-      uses: codecov/codecov-action@v2.1.0
-      with:
-        dile: ResultTests.xml
+test_script:
+- OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:".\MyUnitTests\bin\Debug\MyUnitTests.dll -noshadow" -filter:"+[UnitTestTargetProject*]* -[MyUnitTests*]*" -output:".\MyProject_coverage.xml"
+- codecov -f "MyProject_coverage.xml
