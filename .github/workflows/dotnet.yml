@@ -2,9 +2,9 @@ name: .NET
 
 on:
   push:
-    branches: "**"
+    branches: "2k-198"
   pull_request:
-    branches: "**"
+    branches: "2k-198"
 
 jobs:
   build:
@@ -18,11 +18,11 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore ./hw1/hw1.sln
+      run: dotnet restore 
     - name: Build
-      run: dotnet build --no-restore ./hw1/hw1.sln
+      run: dotnet build --no-restore 
     - name: Test
-      run: dotnet test --no-build --verbosity normal ./hw1/hw1.sln
+      run: dotnet test --no-build --verbosity normal 
     - name: Codecov
       uses: codecov/codecov-action@v2.1.0
       with:
