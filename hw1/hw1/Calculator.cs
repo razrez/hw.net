@@ -1,4 +1,4 @@
-﻿namespace Homework1
+﻿namespace hw1
 {
     public static class Calculator
     {

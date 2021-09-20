@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SolutionRoot CoveredStatements="57" TotalStatements="57" CoveragePercent="100" ReportType="Xml" DotCoverVersion="2021.2.1">
-  <Project Name="Homework1" CoveredStatements="33" TotalStatements="33" CoveragePercent="100">
-    <Namespace Name="Homework1" CoveredStatements="33" TotalStatements="33" CoveragePercent="100">
+  <Project Name="hw1" CoveredStatements="33" TotalStatements="33" CoveragePercent="100">
+    <Namespace Name="hw1" CoveredStatements="33" TotalStatements="33" CoveragePercent="100">
       <Type Name="Calculator" CoveredStatements="10" TotalStatements="10" CoveragePercent="100">
         <Method Name="Calculate(int,string,int):int" CoveredStatements="10" TotalStatements="10" CoveragePercent="100" />
       </Type>
@@ -17,8 +17,8 @@
       </Type>
     </Namespace>
   </Project>
-  <Project Name="Homework1.Tests" CoveredStatements="24" TotalStatements="24" CoveragePercent="100">
-    <Namespace Name="Homework1.Tests" CoveredStatements="24" TotalStatements="24" CoveragePercent="100">
+  <Project Name="hw1.Tests" CoveredStatements="24" TotalStatements="24" CoveragePercent="100">
+    <Namespace Name="hw1.Tests" CoveredStatements="24" TotalStatements="24" CoveragePercent="100">
       <Type Name="CalculatorTests" CoveredStatements="8" TotalStatements="8" CoveragePercent="100">
         <Method Name="Calculate_Operation_IsCorrect(int,string,int,int):void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />
         <Method Name="Calculate_Operation_IsNotCorrect(int,string,int,int):void" CoveredStatements="4" TotalStatements="4" CoveragePercent="100" />

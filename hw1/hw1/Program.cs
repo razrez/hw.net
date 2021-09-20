@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Homework1
+namespace hw1
 {
     public static class Program
     {

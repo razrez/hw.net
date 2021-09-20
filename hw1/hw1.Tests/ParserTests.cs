@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace Homework1.Tests
+namespace hw1.Tests
 {
     public class ParserTests
     {

@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Linq;
 
-namespace Homework1
+namespace hw1
 {
     public static class Parser
     {
