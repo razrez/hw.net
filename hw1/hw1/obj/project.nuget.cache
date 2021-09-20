@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "L99Ij6tc31vOD8q74vm4Bxh6S5iHITytM56RIijJn4GYAfZ7Vjv+8zRV4ffuMl3mxhF2YaHMk6KwCm30bt2aoQ==",
+  "dgSpecHash": "hJztfrieYSshFfjZBtir4Ze+WYT0+9FswqhOYI265HRLGrPhtiX7FJNIENb7m9uztsneiRQLnQWMpO5+Xo2YRA==",
   "success": true,
   "projectFilePath": "C:\\Users\\sharp\\Desktop\\hw.net\\hw1\\hw1\\hw1.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\sharp\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }
