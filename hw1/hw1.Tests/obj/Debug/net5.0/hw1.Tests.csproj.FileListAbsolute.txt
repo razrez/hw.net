@@ -105,3 +105,4 @@ C:\Users\sharp\Desktop\hw.net\hw1\hw1.Tests\obj\Debug\net5.0\hw1.Tests.dll
 C:\Users\sharp\Desktop\hw.net\hw1\hw1.Tests\obj\Debug\net5.0\ref\hw1.Tests.dll
 C:\Users\sharp\Desktop\hw.net\hw1\hw1.Tests\obj\Debug\net5.0\hw1.Tests.pdb
 C:\Users\sharp\Desktop\hw.net\hw1\hw1.Tests\obj\Debug\net5.0\hw1.Tests.genruntimeconfig.cache
+C:\Users\sharp\Desktop\hw.net\hw1\hw1.Tests\bin\Debug\net5.0\hw2IL.dll

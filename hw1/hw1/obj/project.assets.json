@@ -7,6 +7,16 @@
         "build": {
           "build/netstandard1.0/coverlet.collector.targets": {}
         }
+      },
+      "hw2IL/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/hw2IL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/hw2IL.dll": {}
+        }
       }
     }
   },
@@ -61,11 +71,17 @@
         "coverlet.collector.3.1.0.nupkg.sha512",
         "coverlet.collector.nuspec"
       ]
+    },
+    "hw2IL/1.0.0": {
+      "type": "project",
+      "path": "../hw2IL/hw2IL.ilproj",
+      "msbuildProject": "../hw2IL/hw2IL.ilproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "coverlet.collector >= 3.1.0"
+      "coverlet.collector >= 3.1.0",
+      "hw2IL >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -102,7 +118,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\sharp\\Desktop\\hw.net\\hw1\\hw2IL\\hw2IL.ilproj": {
+              "projectPath": "C:\\Users\\sharp\\Desktop\\hw.net\\hw1\\hw2IL\\hw2IL.ilproj"
+            }
+          }
         }
       },
       "warningProperties": {

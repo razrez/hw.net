@@ -12,4 +12,8 @@
       </PackageReference>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\hw2IL\hw2IL.ilproj" />
+    </ItemGroup>
+
 </Project>

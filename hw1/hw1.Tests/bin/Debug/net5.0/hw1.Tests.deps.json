@@ -1092,8 +1092,16 @@
       },
       "xunit.runner.visualstudio/2.4.3": {},
       "hw1/1.0.0": {
+        "dependencies": {
+          "hw2IL": "1.0.0"
+        },
         "runtime": {
           "hw1.dll": {}
+        }
+      },
+      "hw2IL/1.0.0": {
+        "runtime": {
+          "hw2IL.dll": {}
         }
       }
     }
@@ -1749,6 +1757,11 @@
       "hashPath": "xunit.runner.visualstudio.2.4.3.nupkg.sha512"
     },
     "hw1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "hw2IL/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1674,11 +1674,24 @@
       "hw1/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "hw2IL": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/hw1.dll": {}
         },
         "runtime": {
           "bin/placeholder/hw1.dll": {}
+        }
+      },
+      "hw2IL/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/hw2IL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/hw2IL.dll": {}
         }
       }
     }
@@ -5977,6 +5990,11 @@
       "type": "project",
       "path": "../hw1/hw1.csproj",
       "msbuildProject": "../hw1/hw1.csproj"
+    },
+    "hw2IL/1.0.0": {
+      "type": "project",
+      "path": "../hw2IL/hw2IL.ilproj",
+      "msbuildProject": "../hw2IL/hw2IL.ilproj"
     }
   },
   "projectFileDependencyGroups": {

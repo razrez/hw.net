@@ -14,3 +14,5 @@ C:\Users\sharp\Desktop\hw.net\hw1\hw1\obj\Debug\net5.0\hw1.dll
 C:\Users\sharp\Desktop\hw.net\hw1\hw1\obj\Debug\net5.0\ref\hw1.dll
 C:\Users\sharp\Desktop\hw.net\hw1\hw1\obj\Debug\net5.0\hw1.pdb
 C:\Users\sharp\Desktop\hw.net\hw1\hw1\obj\Debug\net5.0\hw1.genruntimeconfig.cache
+C:\Users\sharp\Desktop\hw.net\hw1\hw1\bin\Debug\net5.0\hw2IL.dll
+C:\Users\sharp\Desktop\hw.net\hw1\hw1\obj\Debug\net5.0\hw1.csproj.CopyComplete
