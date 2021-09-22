@@ -15,5 +15,10 @@
             };
             return result;
         }
+
+        public static int Sqr(int a)
+        {
+            return a * a;
+        }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sharp\\Desktop\\hw.net\\hw1\\hw2IL\\hw2IL.ilproj": {}
+    "C:\\Users\\sharp\\Desktop\\hw.net\\hw2\\hw2IL\\hw2IL.ilproj": {}
   },
   "projects": {
-    "C:\\Users\\sharp\\Desktop\\hw.net\\hw1\\hw2IL\\hw2IL.ilproj": {
+    "C:\\Users\\sharp\\Desktop\\hw.net\\hw2\\hw2IL\\hw2IL.ilproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sharp\\Desktop\\hw.net\\hw1\\hw2IL\\hw2IL.ilproj",
+        "projectUniqueName": "C:\\Users\\sharp\\Desktop\\hw.net\\hw2\\hw2IL\\hw2IL.ilproj",
         "projectName": "hw2IL",
-        "projectPath": "C:\\Users\\sharp\\Desktop\\hw.net\\hw1\\hw2IL\\hw2IL.ilproj",
+        "projectPath": "C:\\Users\\sharp\\Desktop\\hw.net\\hw2\\hw2IL\\hw2IL.ilproj",
         "packagesPath": "C:\\Users\\sharp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sharp\\Desktop\\hw.net\\hw1\\hw2IL\\obj\\",
+        "outputPath": "C:\\Users\\sharp\\Desktop\\hw.net\\hw2\\hw2IL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

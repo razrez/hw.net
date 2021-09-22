@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "347hahHzK9zvJwi1LR6FFArxXLrbSVFk6axtNRGFmEiF08MXG8q5g6KXA087GmZZ6lSA3kEfBpSO3sIofkO+rw==",
+  "dgSpecHash": "epTWmooUqZe4Dm2t1MEC37vYqVyzD6aN5oMuepXSRDywBd+J+XGChWciCyCw0hnaG5AujcI5VH23Y2CT9OTrtg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\sharp\\Desktop\\hw.net\\hw1\\hw1\\hw1.csproj",
+  "projectFilePath": "C:\\Users\\sharp\\Desktop\\hw.net\\hw2\\hw1\\hw1.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\sharp\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512"
+    "C:\\Users\\sharp\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
+    "C:\\Users\\sharp\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
+    "C:\\Users\\sharp\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
+    "C:\\Users\\sharp\\.nuget\\packages\\system.runtime\\4.3.1\\system.runtime.4.3.1.nupkg.sha512"
   ],
   "logs": []
 }

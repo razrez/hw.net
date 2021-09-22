@@ -3,3 +3,8 @@ C:\Users\sharp\Desktop\hw.net\hw1\hw2IL\bin\Debug\netstandard2.0\hw2IL.dll
 C:\Users\sharp\Desktop\hw.net\hw1\hw2IL\obj\Debug\netstandard2.0\hw2IL.ilproj.AssemblyReference.cache
 C:\Users\sharp\Desktop\hw.net\hw1\hw2IL\obj\Debug\netstandard2.0\hw2IL.ilproj.CoreCompileInputs.cache
 C:\Users\sharp\Desktop\hw.net\hw1\hw2IL\obj\Debug\netstandard2.0\hw2IL.dll
+C:\Users\sharp\Desktop\hw.net\hw2\hw2IL\bin\Debug\netstandard2.0\hw2IL.deps.json
+C:\Users\sharp\Desktop\hw.net\hw2\hw2IL\bin\Debug\netstandard2.0\hw2IL.dll
+C:\Users\sharp\Desktop\hw.net\hw2\hw2IL\obj\Debug\netstandard2.0\hw2IL.ilproj.AssemblyReference.cache
+C:\Users\sharp\Desktop\hw.net\hw2\hw2IL\obj\Debug\netstandard2.0\hw2IL.ilproj.CoreCompileInputs.cache
+C:\Users\sharp\Desktop\hw.net\hw2\hw2IL\obj\Debug\netstandard2.0\hw2IL.dll

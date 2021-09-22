@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace hw1
 {
     public static class Program
@@ -14,7 +15,8 @@ namespace hw1
 
             Console.WriteLine($"{args[0]}{args[1]}{args[2]}={result}");
             
-            var a = CalculatorIL.Square(result);
+            Console.WriteLine(CalculatorIL.Calculate(val1,operation,val2));
+            Console.WriteLine(CalculatorIL.Sqr(result));
             return 0;
         }
     }
