@@ -11,12 +11,9 @@ namespace hw1
 
             if (parseRes != 0) return parseRes;
 
-            var result = Calculator.Calculate(val1, operation, val2);
-
-            Console.WriteLine($"{args[0]}{args[1]}{args[2]}={result}");
+            var result = CalculatorIL.Calculate(val1, operation, val2);
             
-            Console.WriteLine(CalculatorIL.Calculate(val1,operation,val2));
-            Console.WriteLine(CalculatorIL.Sqr(result));
+            Console.WriteLine($"{args[0]}{args[1]}{args[2]}={result}");
             return 0;
         }
     }
