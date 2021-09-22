@@ -6,8 +6,8 @@ namespace hw1
     {
         public static int Main(string[] args)
         {
-            var parseRes = Parser.TryToParse(args, out var val1,
-                out var operation, out var val2);
+            var parseRes = ParserIL.TryToParse(args, out var val1,
+                out var operation, out var val2); //test ParserIL
 
             if (parseRes != 0) return parseRes;
 
