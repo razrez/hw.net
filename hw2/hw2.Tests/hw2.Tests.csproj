@@ -137,19 +137,4 @@
       <Content Include="bin\Debug\net5.0\zh-Hant\Microsoft.VisualStudio.TestPlatform.ObjectModel.resources.dll" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Compile Remove="bin\**" />
-      <Compile Remove="obj\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <EmbeddedResource Remove="bin\**" />
-      <EmbeddedResource Remove="obj\**" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Remove="bin\**" />
-      <None Remove="obj\**" />
-    </ItemGroup>
-
 </Project>

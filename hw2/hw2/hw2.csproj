@@ -23,6 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Content Include="bin\Debug\hw1.1.0.0.nupkg" />
       <Content Include="bin\Debug\net5.0\hw1.deps.json" />
       <Content Include="bin\Debug\net5.0\hw1.exe" />
       <Content Include="bin\Debug\net5.0\hw1.runtimeconfig.dev.json" />
@@ -40,17 +41,14 @@
 
     <ItemGroup>
       <Compile Remove="obj\**" />
-      <Compile Remove="bin\**" />
     </ItemGroup>
 
     <ItemGroup>
       <EmbeddedResource Remove="obj\**" />
-      <EmbeddedResource Remove="bin\**" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="obj\**" />
-      <None Remove="bin\**" />
     </ItemGroup>
 
 </Project>
