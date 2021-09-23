@@ -14,7 +14,7 @@ namespace hw1.Tests
         public void Calculate_Operation_IsCorrect(int val1, string operation, int val2, int expected)
         {
             //Act
-            var result = Calculator.Calculate(val1, operation, val2);
+            var result = CalculatorIL.Calculate(val1, operation, val2);
             
             //Assert
             Assert.Equal(expected,result);
@@ -27,7 +27,7 @@ namespace hw1.Tests
         public void Calculate_Operation_IsNotCorrect(int val1, string operation, int val2, int expected)
         {
             //Act
-            var result = Calculator.Calculate(val1, operation, val2);
+            var result = CalculatorIL.Calculate(val1, operation, val2);
             
             //Assert
             Assert.Equal(expected,result);

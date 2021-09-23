@@ -100,31 +100,5 @@
     IL_0063: ldloc.2      // V_2
     IL_0064: ret
 
-  } // end of method Calculator::Calculate
-
-  .method public hidebysig static int32
-    Sqr(
-      int32 a
-    ) cil managed
-  {
-    .maxstack 2
-    .locals init (
-      [0] int32 V_0
-    )
-
-    // [20 9 - 20 10]
-    IL_0000: nop
-
-    // [21 13 - 21 26]
-    IL_0001: ldarg.0      // a
-    IL_0002: ldarg.0      // a
-    IL_0003: mul
-    IL_0004: stloc.0      // V_0
-    IL_0005: br.s         IL_0007
-
-    // [22 9 - 22 10]
-    IL_0007: ldloc.0      // V_0
-    IL_0008: ret
-
   } // end of method 
 } // end of class 

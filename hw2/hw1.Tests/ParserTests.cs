@@ -12,7 +12,7 @@ namespace hw1.Tests
         public void TryToParse_Return0(string[] args, int expected)
         {
             //Act
-            var res = Parser.TryToParse(args, out _, out _, out _);
+            var res = ParserIL.TryToParse(args, out _, out _, out _);
             
             //Assert
             Assert.Equal(expected,res);
@@ -25,7 +25,7 @@ namespace hw1.Tests
         public void TryToParse_Return1(string[] args, int expected)
         {
             //Act
-            var res = Parser.TryToParse(args, out _, out _, out _);
+            var res = ParserIL.TryToParse(args, out _, out _, out _);
             
             //Assert
             Assert.Equal(expected,res);
@@ -38,7 +38,7 @@ namespace hw1.Tests
         public void TryToParse_Return2(string[] args, int expected)
         {
             //Act
-            var res = Parser.TryToParse(args, out _, out _, out _);
+            var res = ParserIL.TryToParse(args, out _, out _, out _);
             
             //Assert
             Assert.Equal(expected,res);
