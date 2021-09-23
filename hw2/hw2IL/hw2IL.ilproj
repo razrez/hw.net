@@ -5,4 +5,16 @@
         <RootNamespace>hw2.IL</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Compile Remove="include\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="include\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="include\**" />
+    </ItemGroup>
+
 </Project>
