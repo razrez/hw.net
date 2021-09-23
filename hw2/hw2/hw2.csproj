@@ -22,4 +22,33 @@
         <ProjectReference Include="..\hw2IL\hw2IL.ilproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="bin\Debug\hw1.1.0.0.nupkg" />
+      <Content Include="bin\Debug\net5.0\hw1.deps.json" />
+      <Content Include="bin\Debug\net5.0\hw1.exe" />
+      <Content Include="bin\Debug\net5.0\hw1.runtimeconfig.dev.json" />
+      <Content Include="bin\Debug\net5.0\hw1.runtimeconfig.json" />
+      <Content Include="bin\Debug\net5.0\hw2.deps.json" />
+      <Content Include="bin\Debug\net5.0\hw2.dll" />
+      <Content Include="bin\Debug\net5.0\hw2.exe" />
+      <Content Include="bin\Debug\net5.0\hw2.pdb" />
+      <Content Include="bin\Debug\net5.0\hw2.runtimeconfig.dev.json" />
+      <Content Include="bin\Debug\net5.0\hw2.runtimeconfig.json" />
+      <Content Include="bin\Debug\net5.0\hw2IL.dll" />
+      <Content Include="bin\Debug\net5.0\ref\hw1.dll" />
+      <Content Include="bin\Debug\net5.0\ref\hw2.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="obj\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="obj\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="obj\**" />
+    </ItemGroup>
+
 </Project>
