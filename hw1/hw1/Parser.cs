@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections;
 using System.Linq;
 
 namespace hw1
 {
     public static class Parser
     {
-        private static readonly string[] ExpectedOperation = new[]
+        private static readonly string[] ExpectedOperation = 
         {
             "+",
             "-",
@@ -20,13 +19,13 @@ namespace hw1
             operation = args[1];
             var isVal2Int = int.TryParse(args[2], out val2);
 
-            if (!isVal1Int || !isVal2Int) //if there are no int args
+            if (!isVal1Int || !isVal2Int || val2 == 0 && operation == "/") //if there are no int args
             {
                 Console.WriteLine($"{args[0]}{args[1]}{args[2]} is not a valid calculation syntax");
                 return 1;
             }
 
-            if (((IList) ExpectedOperation).Contains(operation)) return 0;
+            if (ExpectedOperation.Contains(operation)) return 0;
             
             Console.WriteLine(
                 $"{args[0]}{args[1]}{args[2]} is not a valid calculation syntax. "

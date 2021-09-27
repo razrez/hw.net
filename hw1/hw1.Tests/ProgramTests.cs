@@ -15,12 +15,10 @@ namespace hw1.Tests
         [InlineData(new[] {"2","%","3"},2)]
         [InlineData(new[] {"2","2","3"},2)]
         [InlineData(new[] {"2"," ","3"},2)]
+        [InlineData(new[] {"1","/","0"},1)] //divide by zero
         public void TryToParse_Return0(string[] args, int expected)
         {
-            //Act
             var res = Program.Main(args);
-            
-            //Assert
             Assert.Equal(expected,res);
         }
     }

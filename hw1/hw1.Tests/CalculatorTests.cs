@@ -13,10 +13,7 @@ namespace hw1.Tests
         [InlineData(3, "/", 6, 0)]
         public void Calculate_Operation_IsCorrect(int val1, string operation, int val2, int expected)
         {
-            //Act
             var result = Calculator.Calculate(val1, operation, val2);
-            
-            //Assert
             Assert.Equal(expected,result);
         }
         
@@ -26,10 +23,7 @@ namespace hw1.Tests
         [InlineData(2, "3", 3, 0)]
         public void Calculate_Operation_IsNotCorrect(int val1, string operation, int val2, int expected)
         {
-            //Act
             var result = Calculator.Calculate(val1, operation, val2);
-            
-            //Assert
             Assert.Equal(expected,result);
         }
     }
