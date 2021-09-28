@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using hw2IL;
+using Xunit;
 
 namespace hw1.Tests
 {
@@ -14,7 +15,7 @@ namespace hw1.Tests
         public void Calculate_Operation_IsCorrect(int val1, string operation, int val2, int expected)
         {
             //Act
-            var result = CalculatorIL.Calculate(val1, operation, val2);
+            var result = Calculalator.Calculate(val1, operation, val2);
             
             //Assert
             Assert.Equal(expected,result);
@@ -27,7 +28,7 @@ namespace hw1.Tests
         public void Calculate_Operation_IsNotCorrect(int val1, string operation, int val2, int expected)
         {
             //Act
-            var result = CalculatorIL.Calculate(val1, operation, val2);
+            var result = Calculalator.Calculate(val1, operation, val2);
             
             //Assert
             Assert.Equal(expected,result);
