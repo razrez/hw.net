@@ -9,16 +9,6 @@
             "/"
         ]
         
-    let tryParseWith (tryParseFunc: string -> bool * _) = tryParseFunc >> function
-            | true, v    -> Some v
-            | false, _   -> None
-            
-    let parseInt = tryParseWith Int32.TryParse
-    let exists (x : int option) =
-        match x with
-        | Some(x) -> true
-        | None -> false
-        
     let TryToParse (args:string[]) =
         let tryParseWith (tryParseFunc: string -> bool * _) = tryParseFunc >> function
             | true, v    -> Some v
