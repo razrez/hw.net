@@ -23,6 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\hw4.FS\hw4.FS.fsproj" />
       <ProjectReference Include="..\hw4\hw4.csproj" />
     </ItemGroup>
 

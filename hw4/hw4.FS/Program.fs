@@ -3,6 +3,7 @@ open hw4.FS
 [<EntryPoint>]
 let main argv =
     let parsRes = Parser.TryToParse argv
+    printfn $"{parsRes}"
     if (parsRes <> 0) then
         parsRes
     else

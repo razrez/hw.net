@@ -18,7 +18,7 @@ namespace hw1.Tests
         [InlineData(new[] {"1","/","0"},1)] //divide by zero
         public void TryToParse_Return0(string[] args, int expected)
         {
-            var res = Program.Main(args);
+            var res = Program.main(args);
             Assert.Equal(expected,res);
         }
     }
