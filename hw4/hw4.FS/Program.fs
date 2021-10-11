@@ -1,17 +1,10 @@
-// Learn more about F# at http://docs.microsoft.com/dotnet/fsharp
-
-open System
-open System.Collections.Generic
 open hw4.FS
-
-// Define a function to construct a message to print
-let from whom = sprintf "from %s" whom
 
 [<EntryPoint>]
 let main argv =
-    let message = from "F#" // Call the function
-    let res = Parser.TryToParse argv
-    printfn "Hello world %s" message
-    printfn $"{System.Int32.TryParse argv.[0] }"
-
-    0 // return an integer exit code
+    let parsRes = Parser.TryToParse argv
+    if (parsRes <> 0) then
+        parsRes
+    else
+        printfn $"{argv.[0]}{argv.[1]}{argv.[2]}={Calculator.Calculate (argv.[0] |> int) argv.[1] (argv.[2] |> int)}"
+        0 // return an integer exit code
