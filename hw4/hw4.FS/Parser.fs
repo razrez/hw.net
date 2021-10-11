@@ -35,7 +35,7 @@
         
         else if List.contains args.[1] IsExpectedOperation = false then 2 //if unsupported operation
         
-        else if (parseInt args.[0] |> exists <> true
-                && parseInt args.[2] |> exists <> true || args.[1] = "/" && args.[2] = "0") = false
+        else if parseInt args.[0] |> exists = false || parseInt args.[2] |> exists = false
+                || (args.[1] = "/" && args.[2] = "0")
                  then 1 //if there are no int args or DivideByZero
         else 0
