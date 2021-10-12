@@ -1,4 +1,5 @@
-﻿using hw4.FS;
+﻿using System;
+using hw4.FS;
 using Xunit;
 
 namespace hw1.Tests
@@ -26,6 +27,12 @@ namespace hw1.Tests
         {
             var result = Calculator.Calculate(val1, operation, val2);
             Assert.Equal(expected,result);
+        }
+        
+        [Fact]
+        public void WhenOperationIncorrect()
+        {
+            Assert.Throws<DivideByZeroException>(() => Calculator.Calculate(5,"/", 0));
         }
     }
 }
