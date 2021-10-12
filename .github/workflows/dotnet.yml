@@ -20,9 +20,9 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore ./hw2/hw2.sln
     - name: Build
-      run: dotnet build --no-restore ./hw2/hw2.sln
+      run: dotnet build --no-restore ./hw4/hw4.sln
     - name: Test
-      run: dotnet test --no-build --verbosity normal ./hw2/hw2.Tests/hw2.Tests.csproj
+      run: dotnet test --no-build --verbosity normal ./hw4/hw4.Tests/hw4.Tests.csproj
     - name: Codecov
       uses: codecov/codecov-action@v2.1.0
       with:
