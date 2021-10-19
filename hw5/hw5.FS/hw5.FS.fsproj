@@ -10,6 +10,7 @@
         <Compile Include="Calculator.fs" />
         <Compile Include="Parser.fs" />
         <Compile Include="Program.fs" />
+        <Compile Include="ResBuilder.fs" />
     </ItemGroup>
 
     <ItemGroup>
