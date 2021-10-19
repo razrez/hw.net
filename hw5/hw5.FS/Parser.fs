@@ -9,7 +9,8 @@ let TryToParse args=
         
     //2    
     let parseOperation (args:string[]) =
-        let IsExpectedOperation arg = match arg with
+        let IsExpectedOperation arg =
+            match arg with
             | "+" -> Ok Operation.Plus
             | "-" -> Ok Operation.Minus
             | "*" -> Ok Operation.Multiply
@@ -33,7 +34,3 @@ let TryToParse args=
             return val1, operation, val2 
         }
     checkArgsLength args >>= parseOperation >>= parseArgs 
-
-
-    
-    

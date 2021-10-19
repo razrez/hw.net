@@ -6,13 +6,13 @@ type Operation =
     | Divide = 3
 
 ////////////////////////////////////////////////////////           
-type ResBuilder() =
+type ResultBuilder() =
+  
     member this.Bind(x, f) =
         match x with    
         | Ok x -> f x
         | Error error -> Error error
     member this.Return x = Ok x
     member this.Zero() = Error "Wrong Arguments!"
-    
-let res = ResBuilder()
+let res = ResultBuilder()
 let (>>=) x f = Result.bind f x
