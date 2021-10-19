@@ -1,4 +1,3 @@
-open hw5.FS
 open hw5.ResBuilder
 [<EntryPoint>]
 let main argv =

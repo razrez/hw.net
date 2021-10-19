@@ -1,2 +1,2 @@
-﻿module hw5.Tests.ProgramTests
+﻿module ProgramTests
 

@@ -1,5 +1,4 @@
 ﻿module hw5.Tests.ParserTests
-open hw5.FS
 open hw5.ResBuilder
 open Xunit
 
@@ -33,16 +32,16 @@ let TryToParse_Return_AllCorrectResult4 () =
                  Parser.TryToParse [|"33.2";"-";"43.4"|])
 
 [<Fact>]
-let tryParseArgs_WrongArgsCount_WillReturnWrongArgCount () =
+let TryToParse_Error_WrongInputLengt () =
     Assert.Equal(Error $"3 arguments were expected! Not 4",
                  Parser.TryToParse [|"11";"/";"-142";"dds"|])
     
 [<Fact>]
-let tryParseArgs_NotOperation_WillReturnWrongOperation () =
+let TryToParse_Error_UnsupportedOperation () =
     Assert.Equal(Error "Unsupported operation: %",
                  Parser.TryToParse [|"12.5";"%";"3.7"|])    
     
 [<Fact>]
-let tryParseArgs_NotNumber_WillReturnWrongArgFormatInt () =
+let TryToParse_Error_NotArg () =
     Assert.Equal(Error "sever228 is wrong argument",
                  Parser.TryToParse [|"4";"+";"sever228"|] )

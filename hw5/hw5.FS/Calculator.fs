@@ -1,4 +1,4 @@
-﻿module hw5.FS.Calculator
+﻿module Calculator
 open hw5.ResBuilder
 let Calculate (val1, operation, val2) =
     let tryDivide arg1 arg2 =

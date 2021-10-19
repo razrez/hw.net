@@ -1,4 +1,4 @@
-﻿module hw5.FS.Parser
+﻿module Parser
 open hw5.ResBuilder
 let TryToParse args=
     //1
