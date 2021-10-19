@@ -4,10 +4,8 @@ type Operation =
     | Minus = 1
     | Multiply = 2
     | Divide = 3
-
 ////////////////////////////////////////////////////////           
 type ResultBuilder() =
-  
     member this.Bind(x, f) =
         match x with    
         | Ok x -> f x
