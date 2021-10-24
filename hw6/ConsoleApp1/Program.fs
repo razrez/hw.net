@@ -14,6 +14,5 @@ let doRequest =
 [<EntryPoint>]
 let main argv =
     let r = doRequest |> Async.RunSynchronously
-    
     printfn $"{r}"
     0
