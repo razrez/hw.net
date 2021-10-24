@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Giraffe", "Giraffe\Giraffe.fsproj", "{87004AE1-AC80-4C9B-A51D-BCC08A9719A6}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.fsproj", "{0F2F7E25-0680-4AEA-927D-713F36678A94}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RequestApp", "RequestApp\RequestApp.fsproj", "{0F2F7E25-0680-4AEA-927D-713F36678A94}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "hw5.FS", "hw5.FS\hw5.FS.fsproj", "{C9D51902-37B2-41A5-8413-05C28D911E5F}"
 EndProject

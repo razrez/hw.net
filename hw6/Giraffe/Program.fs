@@ -14,48 +14,13 @@ open hw5.ResBuilder
 // Models
 // ---------------------------------
 
-type Message =
-    {
-        Text : string
-    }
-
 // ---------------------------------
 // Views
 // ---------------------------------
 
-module Views =
-    open Giraffe.ViewEngine
-
-    let layout (content: XmlNode list) =
-        html [] [
-            head [] [
-                title []  [ encodedText "hw6" ]
-                link [ _rel  "stylesheet"
-                       _type "text/css"
-                       _href "/main.css" ]
-            ]
-            body [] content
-        ]
-
-    let partial () =
-        h1 [] [ encodedText "hw6" ]
-
-    let index (model : Message) =
-        [
-            partial()
-            p [] [ encodedText model.Text ]
-        ] |> layout
-
 // ---------------------------------
 // Web app
 // ---------------------------------
-
-let indexHandler (name : string) =
-    let greetings = sprintf "Hello %s, from Giraffe!" name
-    let model     = { Text = greetings }
-    let view      = Views.index model
-    htmlView view
-
 [<CLIMutable>]
 type Values =
     {
@@ -64,7 +29,7 @@ type Values =
         arg2: string
     }
 
-let someHttpHandler : HttpHandler =
+let calculateHttpHandler : HttpHandler =
     fun next ctx ->
         let values = ctx.TryBindQueryString<Values>()
         match values with
@@ -81,10 +46,10 @@ let webApp =
     choose [
         GET >=>
             choose [
-                route "/" >=> indexHandler "world"
-                route "/ping" >=> text "pong"
-                route "/calculate" >=> someHttpHandler
-                routef "/hello/%s" indexHandler
+                route "/calculate" >=> calculateHttpHandler
+                //route "/" >=> indexHandler "world"
+                //route "/ping" >=> text "pong"
+                //routef "/hello/%s" indexHandler
             ]
         setStatusCode 404 >=> text "Not Found" ]
 
