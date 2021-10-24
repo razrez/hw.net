@@ -2,7 +2,7 @@ open System.Net
 open FSharp.Data
 let doRequest =
     async {
-        let! r1 = Http.AsyncRequest "http://localhost:5000/add?v1=5&v2=10"
+        let! r1 = Http.AsyncRequest "https://localhost:5001/add?v1=5&Op=*&v2=7"
         let str =
             match r1.Body with
             | HttpResponseBody.Text t -> t
