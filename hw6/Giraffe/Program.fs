@@ -59,9 +59,9 @@ let indexHandler (name : string) =
 [<CLIMutable>]
 type Values =
     {
-        V1: decimal
-        Op: string
-        V2: decimal
+        arg1: string
+        operation: string
+        arg2: string
     }
 
 let someHttpHandler : HttpHandler =
@@ -69,12 +69,11 @@ let someHttpHandler : HttpHandler =
         let values = ctx.TryBindQueryString<Values>()
         match values with
         | Ok v ->
-            let calculateRes args =
-                match Parser.TryToParse args >>= Calculator.Calculate with
-                | Ok res -> $"{res}"
-                | Error exp -> $"{exp}"
+            let args = [|$"{v.arg1}";$"{v.operation}";$"{v.arg2}"|]
+            match Parser.TryToParse args >>= Calculator.Calculate with
+            | Ok res -> (setStatusCode 200 >=> json (res)) next ctx
+            | Error exp -> (setStatusCode 400 >=> json exp) next ctx
             
-            (setStatusCode 200 >=> json (calculateRes([|$"{v.V1}";$"{v.Op}";$"{v.V2}"|] ))) next ctx
         | Error e ->
             (setStatusCode 400 >=> json e) next ctx
 
@@ -84,7 +83,7 @@ let webApp =
             choose [
                 route "/" >=> indexHandler "world"
                 route "/ping" >=> text "pong"
-                route "/add" >=> someHttpHandler
+                route "/calculate" >=> someHttpHandler
                 routef "/hello/%s" indexHandler
             ]
         setStatusCode 404 >=> text "Not Found" ]
