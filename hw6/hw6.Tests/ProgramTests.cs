@@ -29,7 +29,7 @@ namespace hw6.Tests
         [Theory]
         [InlineData("12.5", "%", "3.7", "\"Unsupported operation: %\"")]
         [InlineData("4", "plus", "sever228", "\"sever228 is wrong argument\"")]
-        [InlineData("1", "divide", "4", "0.25")]
+        [InlineData("1", "divide", "0", "\"Second argument is zero!\"")]
         [InlineData("0.4", "multiply", "0.8", "0.32")]
         public async Task DoWrongRequest_And_ReturnErrors(string arg1, string operation, string arg2, string expected)
         {
@@ -53,6 +53,16 @@ namespace hw6.Tests
                 await client.GetAsync($"http://localhost:5000/iwannasleep");
             var result = await response.Content.ReadAsStringAsync();
             Assert.Equal("Not Found", result);
+        }
+
+        [Fact]
+        public async Task Request_Return_MissingValue()
+        {
+            var client = _factory.CreateClient();
+            var response =
+                await client.GetAsync($"https://localhost:5001/calculate?arg1=523114&pertion=/&arg2=43");
+            var result = await response.Content.ReadAsStringAsync();
+            Assert.Equal("\"Missing value for required property operation.\"", result);
         }
         
     }
