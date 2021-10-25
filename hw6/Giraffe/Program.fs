@@ -1,3 +1,4 @@
+module Web.Calculator
 open System
 open System.IO
 open Microsoft.AspNetCore.Builder
@@ -28,6 +29,8 @@ type Values =
         operation: string
         arg2: string
     }
+    
+    
 
 let calculateHttpHandler : HttpHandler =
     fun next ctx ->
@@ -52,6 +55,15 @@ let webApp =
                 //routef "/hello/%s" indexHandler
             ]
         setStatusCode 404 >=> text "Not Found" ]
+    
+type Startup() =
+    member __.ConfigureServices (services : IServiceCollection) =
+        services.AddGiraffe() |> ignore
+
+    member __.Configure (app : IApplicationBuilder)
+                        (env : IHostEnvironment)
+                        (loggerFactory : ILoggerFactory) =
+        app.UseGiraffe webApp
 
 // ---------------------------------
 // Error handler

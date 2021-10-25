@@ -11,10 +11,10 @@ let TryToParse args=
     let parseOperation (args:string[]) =
         let IsExpectedOperation arg =
             match arg with
-            | "+" -> Ok Operation.Plus
-            | "-" -> Ok Operation.Minus
-            | "*" -> Ok Operation.Multiply
-            | "/" -> Ok Operation.Divide
+            | "plus" -> Ok Operation.Plus
+            | "minus" -> Ok Operation.Minus
+            | "multiply" -> Ok Operation.Multiply
+            | "divide" -> Ok Operation.Divide
             | _ -> Error $"Unsupported operation: {arg}"
         //help-method
         res{
