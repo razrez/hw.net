@@ -9,6 +9,7 @@ open Microsoft.Extensions.Hosting
 open Microsoft.Extensions.Logging
 open Microsoft.Extensions.DependencyInjection
 open Giraffe
+open hw5
 open hw5.ResBuilder
 
 // ---------------------------------
@@ -40,7 +41,7 @@ let calculateHttpHandler : HttpHandler =
             let args = [|$"{v.arg1}";$"{v.operation}";$"{v.arg2}"|]
             match Parser.TryToParse args >>= Calculator.Calculate with
             | Ok res -> (setStatusCode 200 >=> json (res)) next ctx
-            | Error exp -> (setStatusCode 400 >=> json exp) next ctx
+            | Error exp -> (setStatusCode 400 >=> json (exp)) next ctx
             
         | Error e ->
             (setStatusCode 400 >=> json e) next ctx

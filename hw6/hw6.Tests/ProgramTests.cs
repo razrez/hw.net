@@ -23,12 +23,28 @@ namespace hw6.Tests
         [InlineData("0.4", "multiply", "0.8", "0.32")]
         public async Task DoRequest_And_ReturnCorrectValue(string arg1, string operation, string arg2, string expected)
         {
+            await DoRequest(arg1, operation, arg2, expected);
+        }
+        
+        [Theory]
+        [InlineData("12.5", "%", "3.7", "\"Unsupported operation: %\"")]
+        [InlineData("4", "plus", "sever228", "\"sever228 is wrong argument\"")]
+        [InlineData("1", "divide", "4", "0.25")]
+        [InlineData("0.4", "multiply", "0.8", "0.32")]
+        public async Task DoWrongRequest_And_ReturnErrors(string arg1, string operation, string arg2, string expected)
+        {
+            await DoRequest(arg1, operation, arg2, expected);
+        }
+
+        private async Task DoRequest(string arg1, string operation, string arg2, string expected)
+        {
             var client = _factory.CreateClient();
             var response = await client.GetAsync(
                 $"http://localhost:5000/calculate?arg1={arg1}&operation={operation}&arg2={arg2}");
             var result = await response.Content.ReadAsStringAsync();
             Assert.Equal(expected, result);
         }
+
         [Fact]
         public async Task Request_Return_NotFound()
         {
