@@ -18,11 +18,11 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore ./hw5/hw5.sln
+      run: dotnet restore ./hw6/Giraffe.sln
     - name: Build
-      run: dotnet build --no-restore ./hw5/hw5.sln
+      run: dotnet build --no-restore ./hw6/Giraffe.sln
     - name: Test
-      run: dotnet test --no-build --verbosity normal ./hw5/hw5.Tests/hw5.Tests.fsproj
+      run: dotnet test --no-build --verbosity normal ./hw6/hw6.Tests/hw6.Tests.fsproj
     - name: Codecov
       uses: codecov/codecov-action@v2.1.0
       with:
