@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore ./hw6/Giraffe.sln
     - name: Test
-      run: dotnet test --no-build --verbosity normal ./hw6/hw6.Tests/hw6.Tests.fsproj
+      run: dotnet test --no-build --verbosity normal ./hw6/hw6.Tests/hw6.Tests.csproj
     - name: Codecov
       uses: codecov/codecov-action@v2.1.0
       with:
