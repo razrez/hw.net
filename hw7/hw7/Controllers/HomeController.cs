@@ -5,9 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using dotnet_practice10_26.Models;
+using hw7.Models;
 
-namespace dotnet_practice10_26.Controllers
+namespace hw7.Controllers
 {
     public class HomeController : Controller
     {
@@ -17,7 +17,7 @@ namespace dotnet_practice10_26.Controllers
         {
             _logger = logger;
         }
-
+        
         public IActionResult MyMethod()
         {
             return View();
@@ -34,6 +34,7 @@ namespace dotnet_practice10_26.Controllers
         {
             return View(profile);
         }
+
         public IActionResult Index()
         {
             return View();
@@ -47,7 +48,7 @@ namespace dotnet_practice10_26.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel {RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier});
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
