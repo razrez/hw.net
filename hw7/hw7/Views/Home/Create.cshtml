@@ -1,9 +1,10 @@
-﻿@model UserProfile
+﻿@using hw7.wwwroot
+@model UserProfile
 
 @using (Html.BeginForm())
 {
     <div class="form-group">
-        @Html.EditorForModel()
+        @Html.MyEditorForModel()
     </div>
     <br>
     <div class="form-group">
