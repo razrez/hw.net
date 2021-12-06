@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Linq;
+using System.Text;
+using hw7.Models;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -12,10 +15,16 @@ namespace hw7.wwwroot
             {
                 throw new ArgumentNullException(nameof(htmlHelper));
             }
-            // кароче мне нужно получить все поля и в зависимости от типа данных, правильно их преобразовать
-            // привет, рефлексия
             
+            var type = htmlHelper.ViewData.ModelMetadata.ModelType;
+            var tagbuilder = new TagBuilder("li");
+            //tagbuilder.Attributes.Ad
             return null;
+        }
+        public static IHtmlContent CreateSubmit(this IHtmlHelper helper, string name, string value)
+        {
+            var btn = new StringBuilder("<input type='submit' class='btn btn-primary' name='" + name + "' value='" + value + "'/>") ;
+            return new HtmlString(btn.ToString());
         }
     }
 }

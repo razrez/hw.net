@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace hw7.Models
 {
-    public record UserProfile
+    public class UserProfile
     {
         [Required(ErrorMessage = "УКАЖИТЕ ИМЯ ПЖ")]
         [MaxLength(20, ErrorMessage = "20 символов - максимум")]
