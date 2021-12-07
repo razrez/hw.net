@@ -16,24 +16,25 @@ namespace hw7.wwwroot
             {
                 throw new ArgumentNullException(nameof(htmlHelper));
             }
-            var typeModel = htmlHelper.ViewData.Model.GetType();
+            //var typeModel = htmlHelper.ViewData.Model.GetType();
             IHtmlContentBuilder htmlRes = new HtmlContentBuilder();
-            var model = htmlHelper.ViewData.Model;
-            foreach (var property in typeModel.GetProperties())
-                AddHtmlContent(htmlRes, property, model);
+            //var model = htmlHelper.ViewData.Model;
+            //foreach (var property in typeModel.GetProperties())
+                //htmlRes.AppendHtml(AddHtmlContent(property, model));
                 //model нужна для сравнения и определения типа инпута
-            return htmlRes;
+            return htmlRes.AppendHtml(AddHtmlContent());
         }
 
-        private static void AddHtmlContent(IHtmlContentBuilder htmlRes, PropertyInfo property, object model)
+        private static string AddHtmlContent()//PropertyInfo property, object model
         {
-            throw new NotImplementedException();
+            var page = new StringBuilder("<div class='col-md-6'><label for='inputEmail4' class='form-label'>Эл. адрес</label><input type='email' class='form-control' id='inputEmail4' placeholder='email'></div>");
+            return page.ToString();
         }
 
         public static IHtmlContent CreateSubmit(this IHtmlHelper helper, string name, string value)
         {
-            var btn = new StringBuilder("<input type='submit' class='btn btn-primary' name='" + name + "' value='" + value + "'/>") ;
-            return new HtmlContentBuilder();
+            var btn = new StringBuilder("<div class='col-12'><input type='submit' class='btn btn-primary' name='" + name + "' value='" + value + "'/></div>") ;
+            return new HtmlString(btn.ToString());
         }
     }
 }
