@@ -3,15 +3,18 @@
 
 @using (Html.BeginForm())
 {
+    
     //@Html.EditorForModel()
-    @Html.MyEditorForModel();
-    @Html.CreateSubmit("mySubmit", "APPLY");
+    @Html.MyEditorForModel()
     <br/>
-    <div class="embed-responsive embed-responsive-21by9">
-        <iframe
-            src="https://open.spotify.com/embed/playlist/5aAwDnfaabQYuSjILb8s4t?utm_source=generator&theme=0"
-            width="100%" height="380" frameBorder="0" allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-        </iframe>
+    <div class="col"><button type="submit" class="btn btn-primary">apply</button></div>
+    <br/>
+    
+    <div class="col">
+    <iframe
+        src="https://open.spotify.com/embed/playlist/5aAwDnfaabQYuSjILb8s4t?utm_source=generator&theme=0"
+        width="100%" height="380" frameBorder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
     </div>
 }  

@@ -16,7 +16,7 @@ namespace hw7.Models
         public string LastName { get; set; }
         
         [MaxLength(30, ErrorMessage = "30 символов - максимум!")]
-        [DisplayName("Любимое блюдо =)")]
+        [DisplayName("мысли:")]
         public string FavouriteMeal { get; set; }
         
         [Required(ErrorMessage = "УКАЖИТЕ ВОЗРАСТ ПЖ")]
