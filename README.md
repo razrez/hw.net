@@ -8,6 +8,11 @@
         <tr>
             <td style="text-align:left"><h1>ITIS</h1></td>
         </tr>
+    </table>
+    <iframe src="https://open.spotify.com/embed/playlist/5aAwDnfaabQYuSjILb8s4t?utm_source=generator" 
+            width="100%" height="380" frameBorder="0" allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
 </center>
 </body>
 </html>
