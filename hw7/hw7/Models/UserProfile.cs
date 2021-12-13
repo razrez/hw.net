@@ -5,27 +5,27 @@ namespace hw7.Models
 {
     public class UserProfile
     {
-        [Required(ErrorMessage = "УКАЖИТЕ ИМЯ ПЖ")]
-        [MaxLength(20, ErrorMessage = "20 символов - максимум")]
-        [DisplayName("Имя")]
+        [Required(ErrorMessage = "enter your name!")]
+        [MaxLength(20, ErrorMessage = "20 symbols - maximum!")]
+        [DisplayName("Name")]
         public string FirstName { get; set; }
         
-        [Required(ErrorMessage = "УКАЖИТЕ ФАМИЛИЮ ПЖ")]
-        [MaxLength(30, ErrorMessage = "30 символов - максимум!")]
-        [DisplayName("Фамилия")]
+        [Required(ErrorMessage = "enter your surname!")]
+        [MaxLength(30, ErrorMessage = "30 symbols - maximum")]
+        [DisplayName("Surname")]
         public string LastName { get; set; }
         
-        [MaxLength(30, ErrorMessage = "30 символов - максимум!")]
-        [DisplayName("мысли:")]
+        [MaxLength(30, ErrorMessage = "30 symbols - maximum")]
+        [DisplayName("Favourite Meal:")]
         public string FavouriteMeal { get; set; }
         
-        [Required(ErrorMessage = "УКАЖИТЕ ВОЗРАСТ ПЖ")]
-        [Range(12, 128, ErrorMessage = "Допустимый возраст: от 12 до 128 лет!")]
-        [DisplayName("Возраст")]
+        [Required(ErrorMessage = "enter your age!")]
+        [Range(12, 128, ErrorMessage = "excpetced range: 12 - 128 ")]
+        [DisplayName("Age")]
         public int Age { get; set; }
         
-        [Required(ErrorMessage = "УКАЖИТЕ ГЕНДЕР ПЖ")]
-        [DisplayName("Пол")]
+        [Required(ErrorMessage = "choose your gender!")]
+        [DisplayName("Gender")]
         public Sex Sex { get; set; }
     }
 
