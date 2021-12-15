@@ -1,6 +1,6 @@
 ﻿namespace hw8.Services
 {
-    public class Calculate : ICalculateService
+    public class Calculator : ICalculateService
     {
         int ICalculateService.Calculate(int val1, string operation, int val2)
         {
