@@ -4,10 +4,10 @@ namespace hw8.Services
 {
     public class Calculator : ICalculateService
     {
-        public string Calculate(int val1, string operation, int val2)
+        public string Calculate(double val1, string operation, double val2)
         {
             var invC = CultureInfo.InvariantCulture;
-            var result = 0;
+            double result = 0;
             result = operation switch
             {
                 "plus" => val1 + val2,

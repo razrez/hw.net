@@ -28,8 +28,8 @@ namespace hw8.Controllers
 
         public string Calculate(string val1, string operation, string val2)
         {
-            var isVal1Int = int.TryParse(val1, out var num1);
-            var isVal2Int = int.TryParse(val2, out var num2);
+            var isVal1Int = double.TryParse(val1, out var num1);
+            var isVal2Int = double.TryParse(val2, out var num2);
 
             if (!isVal1Int || !isVal2Int) //if there are no int args
             {

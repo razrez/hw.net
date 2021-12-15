@@ -2,6 +2,6 @@
 {
     public interface ICalculateService
     {
-        string Calculate(int val1, string operation, int val2);
+        string Calculate(double val1, string operation, double val2);
     }
 }
