@@ -41,7 +41,8 @@ namespace hw8.Controllers
             }
             
             return ExpectedOperation.Contains(operation) ? 
-                _calculate.Calculate(num1, operation, num2) : "Unsupported operation!";
+                _calculate.Calculate(num1, operation, num2) : 
+                "Unsupported operation! \nSupported are: plus, minus, divide and multiply";
         }
         public IActionResult Index()
         {
