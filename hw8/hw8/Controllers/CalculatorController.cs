@@ -46,7 +46,9 @@ namespace hw8.Controllers
         }
         public IActionResult Index()
         {
-            return Content("Content");
+            return Content(
+                "Fill val1, operation(plus, minus, multiply, divide) and val2 here '/calculator/calculate?val1= &operation= &val2= '\n" +
+                "and add it to address line.");
         }
 
 
