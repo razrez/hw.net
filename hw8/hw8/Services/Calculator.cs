@@ -1,19 +1,22 @@
-﻿namespace hw8.Services
+﻿using System.Globalization;
+
+namespace hw8.Services
 {
     public class Calculator : ICalculateService
     {
-        int ICalculateService.Calculate(int val1, string operation, int val2)
+        string ICalculateService.Calculate(int val1, string operation, int val2)
         {
+            CultureInfo invC = CultureInfo.InvariantCulture;
             var result = 0;
             result = operation switch
             {
-                "+" => val1 + val2,
-                "-" => val1 - val2,
-                "*" => val1 * val2,
-                "/" => val1 / val2,
+                "plus" => val1 + val2,
+                "minus" => val1 - val2,
+                "multiply" => val1 * val2,
+                "divide" => val1 / val2,
                 _ => result
             };
-            return result;
+            return result.ToString(invC);
         }
     }
 }
