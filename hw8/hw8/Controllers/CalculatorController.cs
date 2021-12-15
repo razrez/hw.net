@@ -41,11 +41,11 @@ namespace hw8.Controllers
             }
             
             return ExpectedOperation.Contains(operation) ? 
-                _calculate.Calculate(num1, operation, num2) : $"Unsupported operation!";
+                _calculate.Calculate(num1, operation, num2) : "Unsupported operation!";
         }
         public IActionResult Index()
         {
-            return Content(" ");
+            return Content("Content");
         }
 
 
