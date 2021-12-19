@@ -31,11 +31,9 @@ namespace hw8.Tests
 
             [Theory]
             [InlineData("0", "plus", "0", "0")]
-            [InlineData("5,3", "plus", "-3", "2,3")]
             [InlineData("1","plus","2","3")]
             [InlineData("1","plus","0","1")]
             [InlineData("1","minus","1","0")]
-            [InlineData("2,5","multiply","10","25")]
             [InlineData("25","multiply","-3","-75")]
             [InlineData("3","divide","2","1,5")]
             public async Task CalculateAll_ReturnCorrectAnswer(string val1, string operation, string val2, string expected)
