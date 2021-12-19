@@ -1,8 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Xunit;
-using System;
-using System.Net;
 using System.Net.Http;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
@@ -40,8 +38,7 @@ namespace hw8.Tests
             [InlineData("2,5","multiply","10","25")]
             [InlineData("25","multiply","-3","-75")]
             [InlineData("3","divide","2","1,5")]
-            public async Task CalculateAll_RetutnCorrectAnsver(string val1,
-                string operation, string val2, string expected)
+            public async Task CalculateAll_ReturnCorrectAnswer(string val1, string operation, string val2, string expected)
             {
                 await TestCalculation(val1, operation, val2, expected);
             }
@@ -52,8 +49,7 @@ namespace hw8.Tests
             [InlineData("1", "plus", "asaa", "Please, enter numbers")]
             [InlineData("", "plus", "", "Please, enter numbers")]
             [InlineData("3", "divide", "0", "divide by zero!")]
-            public async Task CatchingErrors(string val1,
-                string operation, string val2, string expected)
+            public async Task CatchingErrors(string val1,string operation, string val2, string expected)
             {
                 await TestCalculation(val1, operation, val2, expected);
             }
