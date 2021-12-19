@@ -35,7 +35,7 @@ namespace hw8.Tests
             [InlineData("1","plus","0","1")]
             [InlineData("1","minus","1","0")]
             [InlineData("25","multiply","-3","-75")]
-            [InlineData("3","divide","2","1,5")]
+            [InlineData("6","divide","2","3")]
             public async Task CalculateAll_ReturnCorrectAnswer(string val1, string operation, string val2, string expected)
             {
                 await TestCalculation(val1, operation, val2, expected);
