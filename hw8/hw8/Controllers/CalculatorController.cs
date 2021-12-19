@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Globalization;
 using System.Linq;
 using hw8.Models;
 using hw8.Services;
@@ -32,7 +33,7 @@ namespace hw8.Controllers
             var isVal2Int = double.TryParse(val2, out var num2);
             if (!isVal1Int || !isVal2Int) //if there are no int args
                 return "Please, enter numbers";
-            if (num2 == 0 && operation == "/")
+            if (num2 == 0 && operation == "divide")
                 return "divide by zero!";
             return ExpectedOperation.Contains(operation) ? 
                 _calculate.Calculate(num1, operation, num2) : 
