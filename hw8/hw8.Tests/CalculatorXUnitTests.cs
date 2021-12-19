@@ -16,8 +16,8 @@ namespace hw8.Tests
         [InlineData(1,"minus",-8,"9")]
         [InlineData(2.5,"multiply",10,"25")]
         [InlineData(25,"multiply",-3,"-75")]
-        [InlineData(3,"divide",2,"1.5")]
-        [InlineData(7.5,"divide",2,"3.75")]
+        [InlineData(3,"divide",2,"1,5")]
+        [InlineData(6,"divide",3,"2")]
       
         public void Test1(double val1,string operation, double val2, string expResult)
         {
