@@ -22,7 +22,7 @@ jobs:
     - name: Build
       run: dotnet build --no-restore ./hw8/hw8.sln
     - name: Test
-      run: dotnet test --no-build --verbosity normal ./hw8/hw8.Tests/hw8.Tests.csproj
+      run: dotnet test --no-build --verbosity normal ./hw8/hw8.sln
     - name: Codecov
       uses: codecov/codecov-action@v2.1.0
       with:
