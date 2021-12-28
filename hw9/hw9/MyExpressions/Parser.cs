@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
-namespace hw8.MyExpressions
+namespace hw9.MyExpressions
 {
     public static class Parser
     {
@@ -22,6 +22,7 @@ namespace hw8.MyExpressions
         {
             var operators = new Stack<string>();
             var postfix = new Stack<string>();
+            expression.Replace("%20", "");
             foreach (var i in _inputSplit.Split(expression.Replace(" ", "+")))
             {
                 switch (i)

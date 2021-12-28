@@ -1,6 +1,6 @@
 using System;
 
-namespace hw8.Models
+namespace hw9.Models
 {
     public class ErrorViewModel
     {

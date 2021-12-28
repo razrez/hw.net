@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Hosting;
 
-namespace hw8.Tests
+namespace hw9.Tests
 {
     public class CalculatorIntegrationTests
     {

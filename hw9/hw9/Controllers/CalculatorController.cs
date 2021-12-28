@@ -1,51 +1,36 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Globalization;
 using System.Linq;
-using hw8.Models;
-using hw8.Services;
+using System.Linq.Expressions;
+using hw9.Models;
+using hw9.MyExpressions.BinaryLogic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace hw8.Controllers
+namespace hw9.Controllers
 {
     public class CalculatorController : Controller
     {
         private readonly ILogger<CalculatorController> _calculator;
-        private readonly ICalculateService _calculate;
-        private static readonly string[] ExpectedOperation = 
-        {
-            "plus",
-            "minus",
-            "multiply",
-            "divide"
-        };
 
-        public CalculatorController(ILogger<CalculatorController> calculator, 
-            ICalculateService calculate)
+        public CalculatorController(ILogger<CalculatorController> calculator)
         {
             _calculator = calculator;
-            _calculate = calculate;
         }
-
-        public string Calculate(string val1, string operation, string val2)
+        
+        public IActionResult Calculate([FromQuery] string input)
         {
-            var isVal1Int = double.TryParse(val1, out var num1);
-            var isVal2Int = double.TryParse(val2, out var num2);
-            if (!isVal1Int || !isVal2Int) //if there are no int args
-                return "Please, enter numbers";
-            if (num2 == 0 && operation == "divide")
-                return "divide by zero!";
-            return ExpectedOperation.Contains(operation) ? 
-                _calculate.Calculate(num1, operation, num2) : 
-                "Unsupported operation! \nSupported are: plus, minus, divide and multiply";
+            if (input == null) return Content("example: ../Calculate?input=(3+8)/2*3");
+            var tree = MyExpressionTree.ConvertToBinaryTree(input);
+            var result = Expression.Lambda<Func<double>>(new MyBinaryVisitor().Visit(tree)).Compile().Invoke();
+            return Content(result.ToString());
         }
+        
         public IActionResult Index()
         {
-            return Content(
-                "example for filling: " +
-                "https://localhost:5001/calculator/calculate?val1=3&operation=divide&val2=2");
+            return Content("example for filling: https://localhost:5001/Calculator/Calculate?input=(3+8)/2*3");
         }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
