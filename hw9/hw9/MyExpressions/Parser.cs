@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 namespace hw9.MyExpressions
@@ -7,8 +8,7 @@ namespace hw9.MyExpressions
     {
         private static readonly Regex _inputSplit = new ("(?<=[-+*/\\(\\)])|(?=[-+*/\\(\\)])");
         private static readonly Regex _operand = new ("[0-9]+");
-        
-        private static readonly Dictionary<string, int> _PriorityOperator = new()
+        private static readonly Dictionary<string, int> _priorityOperator = new()
         {
             {"(", 1},
             {")", 1},
@@ -23,7 +23,8 @@ namespace hw9.MyExpressions
             var operators = new Stack<string>();
             var postfix = new Stack<string>();
             expression.Replace("%20", "");
-            foreach (var i in _inputSplit.Split(expression.Replace(" ", "+")))
+            foreach (var i in string.Join(" ", _inputSplit.Split(expression))
+                         .Split(new string[]{" "}, StringSplitOptions.RemoveEmptyEntries))
             {
                 switch (i)
                 {
@@ -50,7 +51,7 @@ namespace hw9.MyExpressions
                         else
                         {
                             while (operators.Count > 0 && operators.Peek() != "(" &&
-                                   _PriorityOperator[i] <= _PriorityOperator[operators.Peek()])
+                                   _priorityOperator[i] <= _priorityOperator[operators.Peek()])
                             {
                                 PostfixPush(operators, postfix);
                             }
