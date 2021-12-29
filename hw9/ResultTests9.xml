@@ -16,7 +16,7 @@
     <File Index="16" Name="C:\Users\sharp\Desktop\hw.net\hw9\hw9.Tests\obj\Debug\net5.0\hw9.Tests.AssemblyInfo.cs" ChecksumAlgorithm="SHA256" Checksum="0E427A3FC7E1D82EA5BD65BAA1D6C9E3E22D560C898FF869B83B3F85DB76A8D9" />
     <File Index="15" Name="C:\Users\sharp\Desktop\hw.net\hw9\hw9.Tests\obj\Debug\net5.0\.NETCoreApp,Version=v5.0.AssemblyAttributes.cs" ChecksumAlgorithm="SHA256" Checksum="3DAB221DDB7A8D7D050731DC8D289DF26D56F7DABEB91B3D7F96E5CB6C994C29" />
     <File Index="14" Name="C:\Users\sharp\.nuget\packages\microsoft.net.test.sdk\16.9.4\build\netcoreapp2.1\Microsoft.NET.Test.Sdk.Program.cs" ChecksumAlgorithm="SHA256" Checksum="D66F12F9433816A8C7DC1B2ACB9E1010F5418F5EEB51E80F1DF57AA1DCAB8D8A" />
-    <File Index="13" Name="C:\Users\sharp\Desktop\hw.net\hw9\hw9.Tests\CalculatorIntegrationTests.cs" ChecksumAlgorithm="SHA256" Checksum="80F9E49BD3FA070C659DC4F2708A246852A66DB372E15C38EADBFF9BA9F34579" />
+    <File Index="13" Name="C:\Users\sharp\Desktop\hw.net\hw9\hw9.Tests\CalculatorIntegrationTests.cs" ChecksumAlgorithm="SHA256" Checksum="59463DC890BB0415C802D5FE5BA6F04BE37F4A77931B4A766AEE96085E3EB4AC" />
   </FileIndices>
   <Assembly Name="hw9.Tests" CoveredStatements="15" TotalStatements="15" CoveragePercent="100">
     <Namespace Name="hw9.Tests" CoveredStatements="15" TotalStatements="15" CoveragePercent="100">
