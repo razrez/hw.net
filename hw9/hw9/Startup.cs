@@ -51,7 +51,7 @@ namespace hw9
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Calculator}/{action=Index}/{id?}");
+                    pattern: "{controller=Calculator}/{action=Calculate}/{id?}");
             });
         }
     }

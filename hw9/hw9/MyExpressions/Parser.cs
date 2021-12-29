@@ -22,51 +22,56 @@ namespace hw9.MyExpressions
         {
             var operators = new Stack<string>();
             var postfix = new Stack<string>();
-            expression.Replace("%20", "");
-            foreach (var i in string.Join(" ", _inputSplit.Split(expression))
-                         .Split(new string[]{" "}, StringSplitOptions.RemoveEmptyEntries))
+            foreach (var i in _inputSplit.Split(expression.Replace(" ", "+")))
             {
-                switch (i)
+                if (i == "")
                 {
-                    case "":
-                        continue;
-                    case "(":
-                        operators.Push(i);
-                        break;
-                    default:
+                    continue;
+                }
+                else if (i == "(")
+                {
+                    operators.Push(i);
+                }
+                else
+                {
+                    if (_operand.IsMatch(i))
                     {
-                        if (_operand.IsMatch(i))
+                        postfix.Push(i);
+                    }
+                    else if (i == ")")
+                    {
+                        while (operators.Peek() != "(")
                         {
-                            postfix.Push(i);
-                        }
-                        else if (i == ")")
-                        {
-                            while (operators.Peek() != "(")
-                            {
-                                PostfixPush(operators, postfix);
-                            }
-
-                            operators.Pop();
-                        }
-                        else
-                        {
-                            while (operators.Count > 0 && operators.Peek() != "(" &&
-                                   _priorityOperator[i] <= _priorityOperator[operators.Peek()])
-                            {
-                                PostfixPush(operators, postfix);
-                            }
-
-                            operators.Push(i);
+                            var op = operators.Pop();
+                            var first = postfix.Pop();
+                            var second = postfix.Pop();
+                            postfix.Push(second + " " + first + " " + op);
                         }
 
-                        break;
+                        operators.Pop();
+                    }
+                    else
+                    {
+                        while (operators.Count > 0 && operators.Peek() != "(" &&
+                               _priorityOperator[i] <= _priorityOperator[operators.Peek()])
+                        {
+                            var op = operators.Pop();
+                            var first = postfix.Pop();
+                            var second = postfix.Pop();
+                            postfix.Push(second + " " + first + " " + op);
+                        }
+
+                        operators.Push(i);
                     }
                 }
             }
 
             while (operators.Count > 0)
             {
-                PostfixPush(operators, postfix);
+                var op = operators.Pop();
+                var first = postfix.Pop();
+                var second = postfix.Pop();
+                postfix.Push(second + " " + first + " " + op);
             }
 
             return postfix.Pop();
