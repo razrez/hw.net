@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 using hw9.Models;
 using hw9.MyExpressions.BinaryLogic;
+using hw9.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -12,10 +13,11 @@ namespace hw9.Controllers
     public class CalculatorController : Controller
     {
         private readonly ILogger<CalculatorController> _calculator;
-
-        public CalculatorController(ILogger<CalculatorController> calculator)
+        private readonly CacheContent _ctx;
+        public CalculatorController(ILogger<CalculatorController> calculator, CacheContent ctx)
         {
             _calculator = calculator;
+            _ctx = ctx;
         }
         
         [HttpGet]
@@ -25,30 +27,22 @@ namespace hw9.Controllers
         }
         
         [HttpPost]
-        public IActionResult Calculate(Calculator calcul)
+        public IActionResult Calculate(string input)
         {
-            if (!ModelState.IsValid)
+            /*if (!ModelState.IsValid)
             {
                 return View(calcul);
-            }
+            }*/
 
-            var tree = MyExpressionTree.ConvertToBinaryTree(calcul.Expr.Replace(" ",""));
-            return Content(Expression.Lambda<Func<double>>(new MyBinaryVisitor().Visit(tree))
-                .Compile()
-                .Invoke()
-                .ToString());
+            var calculator = new CacheCalculator(_ctx, new Calculator());
+            var tree = MyExpressionTree.ConvertToBinaryTree(input.Replace(" ", ""));
+            return Content(calculator.Calculate(tree).ToString());
         }
 
         [HttpGet]
         public ActionResult CalculateU([FromQuery] string expr)
         {
-            if (!ModelState.IsValid)
-                RedirectToAction("Index");
-            var tree = MyExpressionTree.ConvertToBinaryTree(expr);
-            return Content(Expression.Lambda<Func<double>>(new MyBinaryVisitor().Visit(tree))
-                .Compile()
-                .Invoke()
-                .ToString());
+            return RedirectToAction("Index"); 
         } 
         
         [HttpGet]

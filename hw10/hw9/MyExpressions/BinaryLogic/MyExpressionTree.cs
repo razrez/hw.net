@@ -9,7 +9,7 @@ namespace hw9.MyExpressions.BinaryLogic
         public static Expression ConvertToBinaryTree(string input)
         {
             var stack = new Stack<Expression>();
-            foreach (var i in Parser.ToPostfix(input).Split(" "))
+            foreach (var i in Parser.ToPostfix(input).Split( " "))
             {
                 if (double.TryParse(i, out var variable))
                     stack.Push(Expression.Constant(variable));
@@ -22,10 +22,8 @@ namespace hw9.MyExpressions.BinaryLogic
                         "+" => Expression.Add(left, right),
                         "-" => Expression.Subtract(left, right),
                         "*" => Expression.Multiply(left, right),
-                        "/" => Expression.Divide(left, right),
-                        _ => throw new ArgumentOutOfRangeException(nameof(i))
+                        "/" => Expression.Divide(left, right)
                     };
-
                     stack.Push(node);
                 }
             }
