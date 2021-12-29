@@ -22,41 +22,28 @@ namespace hw9.Tests
 
         public class ITest : IClassFixture<HostBuilder>
         {
-            private readonly string url = "https://localhost:5001/calculator/calculate?";
+            private readonly string url = "https://localhost:5001/calculator/calculateu?expr=";
             private readonly HttpClient _client;
             public ITest(HostBuilder factory)
             {
                 _client = factory.CreateClient();
             }
-
-            [Theory]
-            [InlineData("0", "plus", "0", "0")]
-            [InlineData("1","plus","2","3")]
-            [InlineData("1","plus","0","1")]
-            [InlineData("1","minus","1","0")]
-            [InlineData("25","multiply","-3","-75")]
-            [InlineData("6","divide","2","3")]
-            public async Task CalculateAll_ReturnCorrectAnswer(string val1, string operation, string val2, string expected)
-            {
-                await TestCalculation(val1, operation, val2, expected);
-            }
             
             [Theory]
-            [InlineData("1", "plussdfas", "23,4", "Unsupported operation! \nSupported are:" +
-                                                  " plus, minus, divide and multiply")]
-            [InlineData("1", "plus", "asaa", "Please, enter numbers")]
-            [InlineData("", "plus", "", "Please, enter numbers")]
-            [InlineData("3", "divide", "0", "divide by zero!")]
-            public async Task CatchingErrors(string val1,string operation, string val2, string expected)
+            [InlineData("(3+8)/2*3", "16,5")]
+            [InlineData("(3+3)/12*7+8*9", "75,5")]
+            [InlineData("(6-9)", "-3")]
+            [InlineData("3", "3")]
+            [InlineData("(321312)", "321312")]
+            [InlineData("(32)-0,5", "31,5")]
+            public async Task CatchingErrors(string expr, string expected)
             {
-                await TestCalculation(val1, operation, val2, expected);
+                await TestCalculation(expr, expected);
             }
             
-            private async Task TestCalculation(string val1, string operation,
-                string val2, string expected)
+            private async Task TestCalculation(string expr, string expected)
             {
-                var response = await _client.GetAsync($"{url}val1={val1}" +
-                                                      $"&operation={operation}&val2={val2}");
+                var response = await _client.GetAsync($"{url}{expr}");
                 var result = await response.Content.ReadAsStringAsync();
                 Assert.Equal(expected, result);
             }

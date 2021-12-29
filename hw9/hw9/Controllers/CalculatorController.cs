@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq.Expressions;
+using System.Text.RegularExpressions;
 using hw9.Models;
 using hw9.MyExpressions.BinaryLogic;
 using Microsoft.AspNetCore.Mvc;
@@ -38,11 +39,22 @@ namespace hw9.Controllers
                 .ToString());
         }
 
+        [HttpGet]
+        public ActionResult CalculateU([FromQuery] string expr)
+        {
+            if (!ModelState.IsValid)
+                RedirectToAction("Index");
+            var tree = MyExpressionTree.ConvertToBinaryTree(expr);
+            return Content(Expression.Lambda<Func<double>>(new MyBinaryVisitor().Visit(tree))
+                .Compile()
+                .Invoke()
+                .ToString());
+        } 
         
         [HttpGet]
         public IActionResult Index()
         {
-            return Content("example for filling: https://localhost:5001/Calculator/Calculate?expr=(3+8)/2*3");
+            return Content("example for filling: \nhttps://localhost:5001/calculator/calculateu?expr=1/2");
         }
         
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
