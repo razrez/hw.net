@@ -22,46 +22,45 @@ namespace hw9.MyExpressions
         {
             var operators = new Stack<string>();
             var postfix = new Stack<string>();
-            foreach (var i in _inputSplit.Split(expression.Replace(" ", "+")))
+            foreach (var i in _inputSplit.Split(expression.Replace(" ", " ")))
             {
-                if (i == "")
+                switch (i)
                 {
-                    continue;
-                }
-                else if (i == "(")
-                {
-                    operators.Push(i);
-                }
-                else
-                {
-                    if (_operand.IsMatch(i))
+                    case "": continue;
+                    case "(": operators.Push(i); break;
+                    default:
                     {
-                        postfix.Push(i);
-                    }
-                    else if (i == ")")
-                    {
-                        while (operators.Peek() != "(")
+                        if (_operand.IsMatch(i))
                         {
-                            var op = operators.Pop();
-                            var first = postfix.Pop();
-                            var second = postfix.Pop();
-                            postfix.Push(second + " " + first + " " + op);
+                            postfix.Push(i);
+                        }
+                        else if (i == ")")
+                        {
+                            while (operators.Peek() != "(")
+                            {
+                                var op = operators.Pop();
+                                var first = postfix.Pop();
+                                var second = postfix.Pop();
+                                postfix.Push(second + " " + first + " " + op);
+                            }
+
+                            operators.Pop();
+                        }
+                        else
+                        {
+                            while (operators.Count > 0 && operators.Peek() != "(" &&
+                                   _priorityOperator[i] <= _priorityOperator[operators.Peek()])
+                            {
+                                var op = operators.Pop();
+                                var first = postfix.Pop();
+                                var second = postfix.Pop();
+                                postfix.Push(second + " " + first + " " + op);
+                            }
+
+                            operators.Push(i);
                         }
 
-                        operators.Pop();
-                    }
-                    else
-                    {
-                        while (operators.Count > 0 && operators.Peek() != "(" &&
-                               _priorityOperator[i] <= _priorityOperator[operators.Peek()])
-                        {
-                            var op = operators.Pop();
-                            var first = postfix.Pop();
-                            var second = postfix.Pop();
-                            postfix.Push(second + " " + first + " " + op);
-                        }
-
-                        operators.Push(i);
+                        break;
                     }
                 }
             }

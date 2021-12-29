@@ -4,27 +4,34 @@ using System.Threading.Tasks;
 
 namespace hw9.MyExpressions.BinaryLogic
 {
-    public class MyBinaryVisitor : ExpressionVisitor
+    public class MyBinaryVisitor 
     {
-        protected override Expression VisitBinary(BinaryExpression node)
+        public async Task<double> Visit(Expression node)
         {
-            var result = ProcessInParallel(node.Left, node.Right).Result;
-            if (node.NodeType == ExpressionType.Add)
-                return Expression.Add(Expression.Constant(result[0]), Expression.Constant(result[1]));
-            if (node.NodeType == ExpressionType.Subtract)
-                return Expression.Subtract(Expression.Constant(result[0]), Expression.Constant(result[1]));
-            if (node.NodeType == ExpressionType.Multiply)
-                return Expression.Multiply(Expression.Constant(result[0]), Expression.Constant(result[1]));
-            if (node.NodeType == ExpressionType.Divide)
-                return Expression.Divide(Expression.Constant(result[0]), Expression.Constant(result[1]));
-            throw new ArgumentOutOfRangeException(nameof(node.NodeType));
+            return await VisitNode((dynamic) node);
         }
 
-        private static async Task<double[]> ProcessInParallel(Expression left, Expression right)
+        private async Task<double> VisitNode(ConstantExpression node)
         {
-            return await Task.WhenAll(
-                Task.Run(() => Expression.Lambda<Func<double>>(left).Compile().Invoke()),
-                Task.Run(() => Expression.Lambda<Func<double>>(right).Compile().Invoke()));
+            return await Task.FromResult((double) node.Value);
+        }
+
+        private async Task<double> VisitNode(BinaryExpression node)
+        {
+            var left = Visit(node.Left);
+            var right = Visit(node.Right);
+
+            Task.WaitAll(left, right);
+
+            var result = node.NodeType switch
+            {
+                ExpressionType.Add => left.Result + right.Result,
+                ExpressionType.Subtract => left.Result - right.Result,
+                ExpressionType.Multiply => left.Result * right.Result,
+                ExpressionType.Divide => left.Result / right.Result,
+            };
+
+            return result;
         }
     }
 }
