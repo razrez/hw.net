@@ -9,7 +9,7 @@ using hw9.Models;
 namespace hw8.Migrations
 {
     [DbContext(typeof(CacheContext))]
-    [Migration("20211229170923_InitialCreate")]
+    [Migration("20211229173331_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
