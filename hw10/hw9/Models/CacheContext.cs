@@ -2,13 +2,14 @@
 
 namespace hw9.Models
 {
-    public class CacheContent:DbContext
+    public class CacheContext:DbContext
     {
         public DbSet<Cache> Cache { get; set; }
 
-        public CacheContent(DbContextOptions<CacheContent> options) : base(options)
+        public CacheContext(DbContextOptions<CacheContext> options) : base(options)
         {
             Database.EnsureCreated();
         }
+       
     }
 }

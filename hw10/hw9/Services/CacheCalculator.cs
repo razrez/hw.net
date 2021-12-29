@@ -7,8 +7,8 @@ namespace hw9.Services
     public class CacheCalculator:CalculatorDecorator
     {
         public string Input { get; set; }
-        private CacheContent _context;
-        public CacheCalculator(CacheContent ctx, ICalculator calculator) : base(calculator)
+        private CacheContext _context;
+        public CacheCalculator(CacheContext ctx, ICalculator calculator) : base(calculator)
         {
             _context = ctx;
         }

@@ -13,8 +13,8 @@ namespace hw9.Controllers
     public class CalculatorController : Controller
     {
         private readonly ILogger<CalculatorController> _calculator;
-        private readonly CacheContent _ctx;
-        public CalculatorController(ILogger<CalculatorController> calculator, CacheContent ctx)
+        private readonly CacheContext _ctx;
+        public CalculatorController(ILogger<CalculatorController> calculator, CacheContext ctx)
         {
             _calculator = calculator;
             _ctx = ctx;
