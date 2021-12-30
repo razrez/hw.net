@@ -1,0 +1,9 @@
+﻿@model Calculator
+@using(Html.BeginForm("Calculate", "Calculator", FormMethod.Post))
+{
+    @Html.EditorForModel()
+    <br>
+    <input class="btn btn-primary" type="submit" value="Calculate">
+                                                                  
+}
+
