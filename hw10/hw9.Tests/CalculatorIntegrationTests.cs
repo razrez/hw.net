@@ -32,11 +32,11 @@ namespace hw9.Tests
             [Theory]
             //[InlineData("(3+8)/2*3+2,5", "19")]
             //[InlineData("(3+3)/12*7+8*9-0,5", "75")]
-            [InlineData("(6-9)", "-3")]
-            [InlineData("3", "3")]
-            [InlineData("(321312)", "321312")]
-            [InlineData("(32)-20", "12")]
-            public async Task CatchingErrors(string expr, string expected)
+            //[InlineData("(6-9)", "-3")]
+            //[InlineData("3", "3")]
+            //[InlineData("(321312)", "321312")]
+            [InlineData("2+3", "5")]
+            public async Task CorrectCalculation(string expr, string expected)
             {
                 await TestCalculation(expr, expected);
             }
