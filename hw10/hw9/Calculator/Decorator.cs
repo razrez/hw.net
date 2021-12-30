@@ -23,9 +23,5 @@ namespace hw9.Calculator
             return _calculator.CalculateNew(input);
         }
 
-        /*public virtual Task<double> Calculate(Expression input)
-        {
-            return _calculator.Calculate(input);
-        }*/
     }
 }

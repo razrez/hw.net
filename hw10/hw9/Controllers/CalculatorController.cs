@@ -34,7 +34,7 @@ namespace hw9.Controllers
             {
                 var tree = ExpressionTree.ConvertToBinaryTree(input.Replace(" ", ""));
                 var result = calculator.Calculate(tree);
-                return Content(result.ToString());
+                return Content(result);
             }
             catch (Exception ex)
             {
