@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework8", "Homework8.csproj", "{ACBA5DAA-0625-468B-B3E0-F14C55050BCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework8.Tests", "..\Homework8.Tests\Homework8.Tests.csproj", "{19CA9B56-583C-4216-8F4B-5FF81E57B6A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACBA5DAA-0625-468B-B3E0-F14C55050BCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACBA5DAA-0625-468B-B3E0-F14C55050BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACBA5DAA-0625-468B-B3E0-F14C55050BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACBA5DAA-0625-468B-B3E0-F14C55050BCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19CA9B56-583C-4216-8F4B-5FF81E57B6A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19CA9B56-583C-4216-8F4B-5FF81E57B6A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19CA9B56-583C-4216-8F4B-5FF81E57B6A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19CA9B56-583C-4216-8F4B-5FF81E57B6A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
