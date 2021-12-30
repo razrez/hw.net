@@ -19,14 +19,42 @@ namespace Benchmark
         }
         
         [Benchmark]
-        public void CsharpMinusOperation()
+        public void FsharpMinusOperation()
         {
-            var response = _csharpClient.GetAsync(
-                $"/subtract?arg1=1449&arg2=1").GetAwaiter().GetResult();
+            var response = _fsharpClient.GetAsync(
+                $"/calculate?arg1=549&operation=minus&arg2=32").GetAwaiter().GetResult();
         }
 
         [Benchmark]
-        public void CsharpAddOperation()
+        public void FsharpPlusOperation()
+        {
+            var response = _fsharpClient.GetAsync(
+                $"/calculate?arg1=5050&operation=plus&arg2=1").GetAwaiter().GetResult();
+        }
+
+        [Benchmark]
+        public void FsharpMultiplyOperation()
+        {
+            var response = _fsharpClient.GetAsync(
+                $"/calculate?arg1=225&operation=multiply&arg2=5").GetAwaiter().GetResult();            
+        }
+
+        [Benchmark]
+        public void FsharpDivideOperation()
+        {
+            var response = _fsharpClient.GetAsync(
+                $"/calculate?arg1=100&operation=divide&arg2=10").GetAwaiter().GetResult();            
+        }
+                
+        [Benchmark]
+        public void CsharpMinusOperation()
+        {
+            var response = _csharpClient.GetAsync(
+                $"/subtract?arg1=549&arg2=32").GetAwaiter().GetResult();
+        }
+
+        [Benchmark]
+        public void CsharpPlusOperation()
         {
             var response = _csharpClient.GetAsync(
                 $"/add?arg1=5050&arg2=1").GetAwaiter().GetResult();
@@ -40,42 +68,12 @@ namespace Benchmark
         }
 
         [Benchmark]
-        public void CsharpDivisionOperation()
+        public void CsharpDivideOperation()
         {
             var response = _csharpClient.GetAsync(
                 $"/divide?arg1=100&arg2=10").GetAwaiter().GetResult();
         }
 
-        [Benchmark]
-        public string FsharpMinusOperation()
-        {
-            var response = _fsharpClient.GetAsync(
-                $"/subtract?arg1=1449&arg2=1").GetAwaiter().GetResult();
-            return response.ToString();
-        }
-
-        [Benchmark]
-        public string FsharpAddOperation()
-        {
-            var response = _fsharpClient.GetAsync(
-                $"/calculator?arg1=5050&operation=add&arg2=1").GetAwaiter().GetResult();
-            return response.ToString();
-        }
-
-        [Benchmark]
-        public string FsharpMultiplyOperation()
-        {
-            var response = _fsharpClient.GetAsync(
-                $"/calculator?arg1=225&operation=multiply&arg2=5").GetAwaiter().GetResult();            
-            return response.ToString();
-        }
-
-        [Benchmark]
-        public string FsharpDivisionOperation()
-        {
-            var response = _fsharpClient.GetAsync(
-                $"/calculator?arg1=100&operation=divide&arg2=10").GetAwaiter().GetResult();            
-            return response.ToString();
-        }
+        
     }
 }
