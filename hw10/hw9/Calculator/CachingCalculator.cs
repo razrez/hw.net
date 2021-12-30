@@ -2,13 +2,14 @@
 using System.Linq.Expressions;
 using hw9.Models;
 
-namespace hw9.Services
+namespace hw9.Calculator
 {
-    public class CacheCalculator:CalculatorDecorator
+    public class CachingCalculator:Decorator
     {
         public string Input { get; set; }
         private CacheContext _context;
-        public CacheCalculator(CacheContext ctx, ICalculator calculator) : base(calculator)
+
+        public CachingCalculator(CacheContext ctx, ICalculator calculator) : base(calculator)
         {
             _context = ctx;
         }
@@ -24,16 +25,16 @@ namespace hw9.Services
             _context.SaveChanges();
         }
 
-        public override double? Calculate(Expression node)
+        public override string Calculate(Expression node)
         {
             var val = GetValue(node.ToString());
             if (val != null)
             {
-                return Convert.ToDouble(val.Value);
+                return val.Value;
             }
 
-            var newRecord = _calculator.Calculate(node);
-            Add(node.ToString(),newRecord.ToString());
+            var newRecord = _calculator.CalculateNew(node);
+            Add(node.ToString(),newRecord);
             return newRecord;
         }
     }

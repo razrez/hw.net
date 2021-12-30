@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace hw9.MyExpressions.BinaryLogic
+namespace hw9.Calculator
 {
-    public static class MyExpressionTree
+    public static class ExpressionTree
     {
         public static Expression ConvertToBinaryTree(string input)
         {
@@ -17,13 +17,10 @@ namespace hw9.MyExpressions.BinaryLogic
                 {
                     var right = stack.Pop();
                     var left = stack.Pop();
-                    var node = i switch
-                    {
-                        "+" => Expression.Add(left, right),
-                        "-" => Expression.Subtract(left, right),
-                        "*" => Expression.Multiply(left, right),
-                        "/" => Expression.Divide(left, right)
-                    };
+                    var node = i == "+" ? Expression.Add(left, right) :
+                        i == "-" ? Expression.Subtract(left, right) :
+                        i == "*" ? Expression.Multiply(left, right) :
+                        i == "/" ? Expression.Divide(left, right) : throw new ArgumentOutOfRangeException(nameof(i));
                     stack.Push(node);
                 }
             }

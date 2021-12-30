@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq.Expressions;
+using System.Reflection.Metadata;
 using System.Text.RegularExpressions;
 using hw9.Models;
-using hw9.MyExpressions.BinaryLogic;
-using hw9.Services;
+using hw9.Calculator;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -29,14 +29,17 @@ namespace hw9.Controllers
         [HttpPost]
         public IActionResult Calculate(string input)
         {
-            /*if (!ModelState.IsValid)
+            var calculator = new CachingCalculator(_ctx, new Calculator.Calculator());
+            try
             {
-                return View(calcul);
-            }*/
-
-            var calculator = new CacheCalculator(_ctx, new Calculator());
-            var tree = MyExpressionTree.ConvertToBinaryTree(input.Replace(" ", ""));
-            return Content(calculator.Calculate(tree).ToString());
+                var tree = ExpressionTree.ConvertToBinaryTree(input.Replace(" ", ""));
+                var result = calculator.Calculate(tree);
+                return Content(result.ToString());
+            }
+            catch (Exception ex)
+            {
+                return Content($"{ex.Message} :(");
+            }
         }
 
         [HttpGet]

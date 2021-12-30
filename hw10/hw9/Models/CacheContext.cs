@@ -10,6 +10,10 @@ namespace hw9.Models
         {
             Database.EnsureCreated();
         }
-       
+        
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(@"Server=(local);Database=dbTask;Trusted_Connection=True;");
+        }
     }
 }

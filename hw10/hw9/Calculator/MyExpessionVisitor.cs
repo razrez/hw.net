@@ -2,9 +2,9 @@
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace hw9.MyExpressions.BinaryLogic
+namespace hw9.Calculator
 {
-    public class MyBinaryVisitor 
+    public class MyExpressionVisitor 
     {
         public async Task<double> Visit(Expression node)
         {
@@ -29,6 +29,7 @@ namespace hw9.MyExpressions.BinaryLogic
                 ExpressionType.Subtract => left.Result - right.Result,
                 ExpressionType.Multiply => left.Result * right.Result,
                 ExpressionType.Divide => left.Result / right.Result,
+                _ => throw new ArgumentOutOfRangeException(nameof(node.NodeType))
             };
 
             return result;
