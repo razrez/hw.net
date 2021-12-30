@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using hw9.CalcularorExceptons;
 using hw9.Calculator;
 using hw9.Models;
 using Microsoft.AspNetCore.Builder;
@@ -29,6 +30,8 @@ namespace hw9
             services.AddDbContext<CacheContext>(options => options.UseSqlServer(Configuration
                 .GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();
+            services.AddLogging();
+            services.AddScoped<IExceptionHandler, ExceptionHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

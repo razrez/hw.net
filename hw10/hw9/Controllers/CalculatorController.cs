@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Linq.Expressions;
 using System.Reflection.Metadata;
 using System.Text.RegularExpressions;
+using hw9.CalcularorExceptons;
 using hw9.Models;
 using hw9.Calculator;
 using Microsoft.AspNetCore.Mvc;
@@ -14,10 +15,12 @@ namespace hw9.Controllers
     {
         private readonly ILogger<CalculatorController> _calculator;
         private readonly CacheContext _ctx;
-        public CalculatorController(ILogger<CalculatorController> calculator, CacheContext ctx)
+        private readonly IExceptionHandler _exceptionHandler;
+        public CalculatorController(ILogger<CalculatorController> calculator, CacheContext ctx,IExceptionHandler exceptionHandler)
         {
             _calculator = calculator;
             _ctx = ctx;
+            _exceptionHandler = exceptionHandler;
         }
         
         [HttpGet]
@@ -36,9 +39,10 @@ namespace hw9.Controllers
                 var result = calculator.Calculate(tree);
                 return Content(result);
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                return Content($"{ex.Message} :(");
+                _exceptionHandler.HandleException(exception);
+                return Content(exception.Message);
             }
         }
 
@@ -52,10 +56,12 @@ namespace hw9.Controllers
                 var result = calculator.Calculate(tree);
                 return Content(result);
             }
-            catch (Exception ex)
+            catch (Exception exception)
             {
-                return Content($"{ex.Message} :(");
+                _exceptionHandler.HandleException(exception);
+                return Content(exception.Message);
             }
+
         } 
         
         [HttpGet]
