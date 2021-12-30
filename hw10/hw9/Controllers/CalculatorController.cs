@@ -45,7 +45,17 @@ namespace hw9.Controllers
         [HttpGet]
         public ActionResult CalculateU([FromQuery] string expr)
         {
-            return RedirectToAction("Index"); 
+            var calculator = new CachingCalculator(_ctx, new Calculator.Calculator());
+            try
+            {
+                var tree = ExpressionTree.ConvertToBinaryTree(expr.Replace(" ", "+"));
+                var result = calculator.Calculate(tree);
+                return Content(result);
+            }
+            catch (Exception ex)
+            {
+                return Content($"{ex.Message} :(");
+            }
         } 
         
         [HttpGet]
