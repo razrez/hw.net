@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Giraffe", "Giraffe.fsproj", "{A54AAC2F-C40C-4391-AF63-79EF596BABF4}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Calculator", "Calculator\Calculator.fsproj", "{1A42B3FB-E0D4-477D-9FDD-0DB066446F26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Giraffe.Tests", "..\Giraffe.Tests\Giraffe.Tests.csproj", "{7F5FF5EA-8F48-4609-8C83-EB994A7069A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A54AAC2F-C40C-4391-AF63-79EF596BABF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A54AAC2F-C40C-4391-AF63-79EF596BABF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A54AAC2F-C40C-4391-AF63-79EF596BABF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A54AAC2F-C40C-4391-AF63-79EF596BABF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A42B3FB-E0D4-477D-9FDD-0DB066446F26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A42B3FB-E0D4-477D-9FDD-0DB066446F26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A42B3FB-E0D4-477D-9FDD-0DB066446F26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A42B3FB-E0D4-477D-9FDD-0DB066446F26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F5FF5EA-8F48-4609-8C83-EB994A7069A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F5FF5EA-8F48-4609-8C83-EB994A7069A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F5FF5EA-8F48-4609-8C83-EB994A7069A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F5FF5EA-8F48-4609-8C83-EB994A7069A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
