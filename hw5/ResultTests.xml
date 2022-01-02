@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root CoveredStatements="67" TotalStatements="67" CoveragePercent="100" ReportType="DetailedXml" DotCoverVersion="2021.2.2">
+  <FileIndices>
+    <File Index="4" Name="C:\Users\sharp\Desktop\hw.net\hw5\hw5.FS\ResBuilder.fs" ChecksumAlgorithm="SHA256" Checksum="ED6DDC4FA0228ED47E3EBED9CF6E442D74A04336531A330CB9DDE567779A4996" />
+    <File Index="3" Name="C:\Users\sharp\Desktop\hw.net\hw5\hw5.FS\Parser.fs" ChecksumAlgorithm="SHA256" Checksum="8091C31C8ABF0DAEE34FCFB5C0A286446DD458A7FC6FB25DC8003E81EA7A7F24" />
+    <File Index="2" Name="C:\Users\sharp\Desktop\hw.net\hw5\hw5.FS\Calculator.fs" ChecksumAlgorithm="SHA256" Checksum="94BA19290B55E43E66266E786AF3F124BE2C3A55E38DDCFAEB0BDEDACFED3353" />
+    <File Index="1" Name="C:\Users\sharp\Desktop\hw.net\hw5\hw5.FS\Program.fs" ChecksumAlgorithm="SHA256" Checksum="DE6E47600BE389F7977FEE7FDE982EEB89D51DD024CA2954440598EB7992FE60" />
+    <File Index="6" Name="C:\Users\sharp\Desktop\hw.net\hw5\hw5.Tests\CalculatorTests.fs" ChecksumAlgorithm="SHA256" Checksum="8D976C0DCEC822B8E79C4C06687AEB72DB41144437190FBA0E18EAEEC8068D91" />
+    <File Index="5" Name="C:\Users\sharp\Desktop\hw.net\hw5\hw5.Tests\ParserTests.fs" ChecksumAlgorithm="SHA256" Checksum="EBEC2EDE32DEE514345819EBECF3FB1F5D6110962F81BE25660C98FFB582ACE2" />
+    <File Index="7" Name="C:\Users\sharp\Desktop\hw.net\hw5\hw5.Tests\ProgramTests.fs" ChecksumAlgorithm="SHA256" Checksum="38ACAE4D5B8AFABE3FD6837484B582BEA134F757AE9F41D14FE11973491646CF" />
+  </FileIndices>
+  <Assembly Name="hw5.FS" CoveredStatements="45" TotalStatements="45" CoveragePercent="100">
+    <Namespace Name="&lt;StartupCode$hw5-FS&gt;.$hw5" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+      <Type Name="ResBuilder" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+        <Method Name=".cctor():System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="4" Line="15" Column="1" EndLine="15" EndColumn="23" Covered="True" />
+        </Method>
+      </Type>
+    </Namespace>
+    <Namespace Name="hw5" CoveredStatements="8" TotalStatements="8" CoveragePercent="100">
+      <Type Name="ResBuilder" CoveredStatements="8" TotalStatements="8" CoveragePercent="100">
+        <Type Name="ResBuilder" CoveredStatements="7" TotalStatements="7" CoveragePercent="100">
+          <Method Name=".ctor():System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+            <Statement FileIndex="4" Line="8" Column="6" EndLine="8" EndColumn="16" Covered="True" />
+          </Method>
+          <Method Name="Bind&lt;d,e,f&gt;(Microsoft.FSharp.Core.FSharpResult&lt;d,e&gt;,Microsoft.FSharp.Core.FSharpFunc&lt;d,Microsoft.FSharp.Core.FSharpResult&lt;f,e&gt;&gt;):Microsoft.FSharp.Core.FSharpResult&lt;f,e&gt;" CoveredStatements="4" TotalStatements="4" CoveragePercent="100">
+            <Statement FileIndex="4" Line="10" Column="9" EndLine="10" EndColumn="21" Covered="True" />
+            <Statement FileIndex="4" Line="11" Column="19" EndLine="11" EndColumn="22" Covered="True" />
+            <Statement FileIndex="4" Line="10" Column="9" EndLine="10" EndColumn="21" Covered="True" />
+            <Statement FileIndex="4" Line="12" Column="26" EndLine="12" EndColumn="37" Covered="True" />
+          </Method>
+          <Method Name="Return&lt;b,c&gt;(b):Microsoft.FSharp.Core.FSharpResult&lt;b,c&gt;" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+            <Statement FileIndex="4" Line="13" Column="28" EndLine="13" EndColumn="32" Covered="True" />
+          </Method>
+          <Method Name="Zero&lt;a&gt;():Microsoft.FSharp.Core.FSharpResult&lt;a,System.String&gt;" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+            <Statement FileIndex="4" Line="14" Column="26" EndLine="14" EndColumn="50" Covered="True" />
+          </Method>
+        </Type>
+        <Method Name="op_GreaterGreaterEquals&lt;a,b,c&gt;(Microsoft.FSharp.Core.FSharpResult&lt;a,b&gt;,Microsoft.FSharp.Core.FSharpFunc&lt;a,Microsoft.FSharp.Core.FSharpResult&lt;c,b&gt;&gt;):Microsoft.FSharp.Core.FSharpResult&lt;c,b&gt;" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="4" Line="16" Column="17" EndLine="16" EndColumn="32" Covered="True" />
+        </Method>
+      </Type>
+    </Namespace>
+    <Type Name="Calculator" CoveredStatements="8" TotalStatements="8" CoveragePercent="100">
+      <Type Name="Calculate@13" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+        <Method Name="Invoke(System.Decimal):Microsoft.FSharp.Core.FSharpResult&lt;System.Decimal,System.String&gt;" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <Statement FileIndex="2" Line="12" Column="16" EndLine="12" EndColumn="47" Covered="True" />
+          <Statement FileIndex="2" Line="13" Column="16" EndLine="13" EndColumn="26" Covered="True" />
+        </Method>
+      </Type>
+      <Method Name="Calculate(System.Decimal,hw5.ResBuilder.Operation,System.Decimal):Microsoft.FSharp.Core.FSharpResult&lt;System.Decimal,System.String&gt;" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
+        <Statement FileIndex="2" Line="8" Column="5" EndLine="8" EndColumn="8" Covered="True" />
+        <Statement FileIndex="2" Line="8" Column="9" EndLine="8" EndColumn="29" Covered="True" />
+        <Statement FileIndex="2" Line="9" Column="29" EndLine="9" EndColumn="47" Covered="True" />
+        <Statement FileIndex="2" Line="10" Column="30" EndLine="10" EndColumn="48" Covered="True" />
+        <Statement FileIndex="2" Line="11" Column="33" EndLine="11" EndColumn="51" Covered="True" />
+        <Statement FileIndex="2" Line="12" Column="16" EndLine="12" EndColumn="47" Covered="True" />
+      </Method>
+    </Type>
+    <Type Name="Parser" CoveredStatements="21" TotalStatements="21" CoveragePercent="100">
+      <Type Name="checkArgsLength@6" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+        <Method Name="Invoke(System.String[]):Microsoft.FSharp.Core.FSharpResult&lt;System.String[],System.String&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+          <Statement FileIndex="3" Line="6" Column="9" EndLine="6" EndColumn="31" Covered="True" />
+          <Statement FileIndex="3" Line="7" Column="16" EndLine="7" EndColumn="23" Covered="True" />
+          <Statement FileIndex="3" Line="8" Column="16" EndLine="8" EndColumn="69" Covered="True" />
+        </Method>
+      </Type>
+      <Type Name="IsExpectedOperation@13" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
+        <Method Name="Invoke(System.String):Microsoft.FSharp.Core.FSharpResult&lt;hw5.ResBuilder.Operation,System.String&gt;" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
+          <Statement FileIndex="3" Line="13" Column="13" EndLine="13" EndColumn="27" Covered="True" />
+          <Statement FileIndex="3" Line="14" Column="22" EndLine="14" EndColumn="39" Covered="True" />
+          <Statement FileIndex="3" Line="15" Column="22" EndLine="15" EndColumn="40" Covered="True" />
+          <Statement FileIndex="3" Line="16" Column="22" EndLine="16" EndColumn="43" Covered="True" />
+          <Statement FileIndex="3" Line="17" Column="22" EndLine="17" EndColumn="41" Covered="True" />
+          <Statement FileIndex="3" Line="18" Column="20" EndLine="18" EndColumn="57" Covered="True" />
+        </Method>
+      </Type>
+      <Type Name="parseArg@28" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+        <Method Name="Invoke(System.String):Microsoft.FSharp.Core.FSharpResult&lt;System.Decimal,System.String&gt;" CoveredStatements="3" TotalStatements="3" CoveragePercent="100">
+          <Statement FileIndex="3" Line="28" Column="17" EndLine="28" EndColumn="35" Covered="True" />
+          <Statement FileIndex="3" Line="29" Column="13" EndLine="29" EndColumn="17" Covered="True" />
+          <Statement FileIndex="3" Line="29" Column="23" EndLine="29" EndColumn="55" Covered="True" />
+        </Method>
+      </Type>
+      <Type Name="parseArgs@26T" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+        <Method Name="Invoke(System.Tuple&lt;System.String,a,System.String&gt;):Microsoft.FSharp.Core.FSharpResult&lt;System.Tuple&lt;System.Decimal,a,System.Decimal&gt;,System.String&gt;" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="3" Line="31" Column="9" EndLine="31" EndColumn="12" Covered="True" />
+        </Method>
+      </Type>
+      <Type Name="parseArgs@33-1" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+        <Method Name="Invoke(System.Decimal):Microsoft.FSharp.Core.FSharpResult&lt;System.Tuple&lt;System.Decimal,a,System.Decimal&gt;,System.String&gt;" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <Statement FileIndex="3" Line="32" Column="13" EndLine="32" EndColumn="38" Covered="True" />
+          <Statement FileIndex="3" Line="33" Column="13" EndLine="33" EndColumn="38" Covered="True" />
+        </Method>
+      </Type>
+      <Type Name="parseArgs@34-2" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+        <Method Name="Invoke(System.Decimal):Microsoft.FSharp.Core.FSharpResult&lt;System.Tuple&lt;System.Decimal,a,System.Decimal&gt;,System.String&gt;" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <Statement FileIndex="3" Line="33" Column="13" EndLine="33" EndColumn="38" Covered="True" />
+          <Statement FileIndex="3" Line="34" Column="13" EndLine="34" EndColumn="41" Covered="True" />
+        </Method>
+      </Type>
+      <Type Name="parseOperation@12" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+        <Method Name="Invoke(System.String[]):Microsoft.FSharp.Core.FSharpResult&lt;System.Tuple&lt;System.String,hw5.ResBuilder.Operation,System.String&gt;,System.String&gt;" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="3" Line="20" Column="9" EndLine="20" EndColumn="12" Covered="True" />
+        </Method>
+      </Type>
+      <Type Name="parseOperation@22-1" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+        <Method Name="Invoke(hw5.ResBuilder.Operation):Microsoft.FSharp.Core.FSharpResult&lt;System.Tuple&lt;System.String,hw5.ResBuilder.Operation,System.String&gt;,System.String&gt;" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <Statement FileIndex="3" Line="21" Column="13" EndLine="21" EndColumn="58" Covered="True" />
+          <Statement FileIndex="3" Line="22" Column="13" EndLine="22" EndColumn="50" Covered="True" />
+        </Method>
+      </Type>
+      <Method Name="TryToParse(System.String[]):Microsoft.FSharp.Core.FSharpResult&lt;System.Tuple&lt;System.Decimal,hw5.ResBuilder.Operation,System.Decimal&gt;,System.String&gt;" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+        <Statement FileIndex="3" Line="36" Column="5" EndLine="36" EndColumn="58" Covered="True" />
+      </Method>
+    </Type>
+    <Type Name="Program" CoveredStatements="7" TotalStatements="7" CoveragePercent="100">
+      <Type Name="main@4" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+        <Method Name="Invoke(System.Tuple&lt;System.Decimal,hw5.ResBuilder.Operation,System.Decimal&gt;):Microsoft.FSharp.Core.FSharpResult&lt;System.Decimal,System.String&gt;" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="1" Line="4" Column="38" EndLine="4" EndColumn="58" Covered="True" />
+        </Method>
+      </Type>
+      <Method Name="main(System.String[]):System.Int32" CoveredStatements="6" TotalStatements="6" CoveragePercent="100">
+        <Statement FileIndex="1" Line="4" Column="5" EndLine="4" EndColumn="63" Covered="True" />
+        <Statement FileIndex="1" Line="5" Column="17" EndLine="5" EndColumn="32" Covered="True" />
+        <Statement FileIndex="1" Line="5" Column="34" EndLine="5" EndColumn="35" Covered="True" />
+        <Statement FileIndex="1" Line="4" Column="5" EndLine="4" EndColumn="63" Covered="True" />
+        <Statement FileIndex="1" Line="6" Column="20" EndLine="6" EndColumn="35" Covered="True" />
+        <Statement FileIndex="1" Line="6" Column="37" EndLine="6" EndColumn="38" Covered="True" />
+      </Method>
+    </Type>
+  </Assembly>
+  <Assembly Name="hw5.Tests" CoveredStatements="22" TotalStatements="22" CoveragePercent="100">
+    <Namespace Name="hw5.Tests" CoveredStatements="22" TotalStatements="22" CoveragePercent="100">
+      <Type Name="CalculatorTests" CoveredStatements="12" TotalStatements="12" CoveragePercent="100">
+        <Type Name="Calculate_Divide_IsCorrect@50" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <Method Name="Invoke(System.Decimal):Microsoft.FSharp.Core.FSharpResult&lt;a,System.String&gt;" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+            <Statement FileIndex="6" Line="49" Column="9" EndLine="49" EndColumn="74" Covered="True" />
+            <Statement FileIndex="6" Line="50" Column="9" EndLine="50" EndColumn="39" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="Calculate_Minus_IsCorrect@25" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <Method Name="Invoke(System.Decimal):Microsoft.FSharp.Core.FSharpResult&lt;a,System.String&gt;" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+            <Statement FileIndex="6" Line="24" Column="9" EndLine="24" EndColumn="73" Covered="True" />
+            <Statement FileIndex="6" Line="25" Column="9" EndLine="25" EndColumn="39" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="Calculate_Multiply_IsCorrect@38" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <Method Name="Invoke(System.Decimal):Microsoft.FSharp.Core.FSharpResult&lt;a,System.String&gt;" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+            <Statement FileIndex="6" Line="37" Column="9" EndLine="37" EndColumn="76" Covered="True" />
+            <Statement FileIndex="6" Line="38" Column="9" EndLine="38" EndColumn="39" Covered="True" />
+          </Method>
+        </Type>
+        <Type Name="Calculate_Plus_IsCorrect@14" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+          <Method Name="Invoke(System.Decimal):Microsoft.FSharp.Core.FSharpResult&lt;a,System.String&gt;" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+            <Statement FileIndex="6" Line="13" Column="9" EndLine="13" EndColumn="72" Covered="True" />
+            <Statement FileIndex="6" Line="14" Column="9" EndLine="14" EndColumn="39" Covered="True" />
+          </Method>
+        </Type>
+        <Method Name="Calculate_Divide_IsCorrect&lt;a&gt;(System.Decimal,System.Decimal,System.Decimal):Microsoft.FSharp.Core.FSharpResult&lt;a,System.String&gt;" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="6" Line="48" Column="5" EndLine="48" EndColumn="8" Covered="True" />
+        </Method>
+        <Method Name="Calculate_Minus_IsCorrect&lt;a&gt;(System.Decimal,System.Decimal,System.Decimal):Microsoft.FSharp.Core.FSharpResult&lt;a,System.String&gt;" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="6" Line="23" Column="5" EndLine="23" EndColumn="8" Covered="True" />
+        </Method>
+        <Method Name="Calculate_Multiply_IsCorrect&lt;a&gt;(System.Decimal,System.Decimal,System.Decimal):Microsoft.FSharp.Core.FSharpResult&lt;a,System.String&gt;" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="6" Line="36" Column="5" EndLine="36" EndColumn="8" Covered="True" />
+        </Method>
+        <Method Name="Calculate_Plus_IsCorrect&lt;a&gt;(System.Decimal,System.Decimal,System.Decimal):Microsoft.FSharp.Core.FSharpResult&lt;a,System.String&gt;" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="6" Line="12" Column="5" EndLine="12" EndColumn="8" Covered="True" />
+        </Method>
+      </Type>
+      <Type Name="ParserTests" CoveredStatements="8" TotalStatements="8" CoveragePercent="100">
+        <Method Name="TryToParse_Error_NotArg():System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="5" Line="46" Column="5" EndLine="47" EndColumn="60" Covered="True" />
+        </Method>
+        <Method Name="TryToParse_Error_UnsupportedOperation():System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="5" Line="41" Column="5" EndLine="42" EndColumn="57" Covered="True" />
+        </Method>
+        <Method Name="TryToParse_Error_WrongInputLengt():System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="5" Line="36" Column="5" EndLine="37" EndColumn="62" Covered="True" />
+        </Method>
+        <Method Name="TryToParse_Return_AllCorrectResult1():System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="5" Line="16" Column="5" EndLine="17" EndColumn="58" Covered="True" />
+        </Method>
+        <Method Name="TryToParse_Return_AllCorrectResult2():System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="5" Line="21" Column="5" EndLine="22" EndColumn="58" Covered="True" />
+        </Method>
+        <Method Name="TryToParse_Return_AllCorrectResult3():System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="5" Line="26" Column="5" EndLine="27" EndColumn="58" Covered="True" />
+        </Method>
+        <Method Name="TryToParse_Return_AllCorrectResult4():System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="5" Line="31" Column="5" EndLine="32" EndColumn="58" Covered="True" />
+        </Method>
+        <Method Name="TryToParse_Return_CorrectOperationResult(System.String,Operation):System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="5" Line="11" Column="5" EndLine="12" EndColumn="61" Covered="True" />
+        </Method>
+      </Type>
+      <Type Name="ProgramTests" CoveredStatements="2" TotalStatements="2" CoveragePercent="100">
+        <Method Name="Main_Return0():System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="7" Line="8" Column="5" EndLine="8" EndColumn="58" Covered="True" />
+        </Method>
+        <Method Name="Main_ReturnNot0():System.Void" CoveredStatements="1" TotalStatements="1" CoveragePercent="100">
+          <Statement FileIndex="7" Line="5" Column="5" EndLine="5" EndColumn="57" Covered="True" />
+        </Method>
+      </Type>
+    </Namespace>
+  </Assembly>
+</Root>
