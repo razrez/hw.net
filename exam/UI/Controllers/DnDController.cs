@@ -7,7 +7,7 @@ namespace UI.Controllers;
 public class DnDController : Controller
 {
     private const string _dbUrl = "https://localhost:7162";
-    private const string _format = "{0}/{1}/{2}";
+    private const string _urlFormat = "{0}/{1}/{2}";
 
     private readonly HttpClient _client;
 
@@ -16,20 +16,20 @@ public class DnDController : Controller
         _client = new HttpClient();
     }
 
-    [BindProperty] public MyFighter Character { get; set; }
-    public Monster Monster;
-
-    public void OnGet()
+    [HttpGet]
+    public async Task<IActionResult> Index()
     {
+        return View(new MyFighter());
     }
 
-    public async Task<IActionResult> OnPost()
+    [HttpPost]
+    public async Task<IActionResult> Create([FromForm] MyFighter fighter)
     {
         var monster =
             await _client.GetFromJsonAsync<Monster>(
-                string.Format(_format, _dbUrl, "Monster", "GetMonster"));
-        Monster = monster;
+                string.Format(_urlFormat, _dbUrl, "Monster", "GetMonster"));
         
-        return Content($"{monster.Name}{monster.DamagePerRound}");
+        return Content($"{fighter.Name} DamagePerRound:{fighter.DamagePerRound} " +
+                       $"vs {monster.Name} DamagePerRound:{monster.DamagePerRound}");
     }
 }

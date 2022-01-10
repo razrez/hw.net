@@ -1,0 +1,13 @@
+﻿@model MyFighter
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+@using (Html.BeginForm("Create", "DnD", FormMethod.Post))
+{
+    @Html.EditorForModel()
+    <br>
+    <input class="btn btn-primary" type="submit" value="...">
+}
