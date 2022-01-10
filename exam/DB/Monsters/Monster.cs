@@ -4,15 +4,33 @@ namespace DB;
 public class Monster
 {
     [Key]
+    public int Id { get; set; }
+
+    [Required]
     public string Name { get; set; }
+
+    [Required]
+    [Range(1, 100)]
     public int HitPoints { get; set; }
-    public int AttackModifier { get; set; } // +
-    public int AttackPerRound { get; set; }
-    public int Damage { get; set; }         
-    public int DamageModifier { get; set; } // +
-    public int Weapon { get; set; }         // +
-    public int AC { get; set; }
+
+    [Required]
+    [Range(1, 100)]
+    public int AttackModifier { get; set; }
     
-    public int MinACtoAlwaysHit { get; set; }
-    public int DamagePerRound { get; set; }
+    [Required]
+    [Range(1, 100)]
+    public int DamageModifier { get; set; }
+
+    [Required]
+    [Range(1, 100)]
+    public int AttackPerRound { get; set; }
+
+    [Required]
+    [Range(1, 100)]
+    public int Damage { get; set; }
+
+
+    [Required]
+    [Range(1, 100)]
+    public int AC { get; set; }
 }

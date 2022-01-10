@@ -4,7 +4,7 @@ namespace DB;
 
 public class MonstersContext : DbContext
 {
-    public DbSet<Monster> Monsters { get; set; }
+    public DbSet<Monster?> Monsters { get; set; }
 
     public MonstersContext(DbContextOptions<MonstersContext> options) : base(options)
     {
@@ -17,18 +17,39 @@ public class MonstersContext : DbContext
         modelBuilder.Entity<Monster>().HasData(
             new Monster[]
             {
-                new Monster{Name = "Goblin", HitPoints = 50, AttackModifier = 5, 
-                    AttackPerRound = 2, Damage = 1, DamageModifier = 1, Weapon = 1, AC = 2,
-                    MinACtoAlwaysHit = 7, DamagePerRound = 6
+                new Monster
+                {
+                    Id = 1,
+                    Name = "Goblin",
+                    HitPoints = 59,
+                    AttackModifier = 5,
+                    AttackPerRound = 1,
+                    Damage = 12,
+                    DamageModifier = 6,
+                    AC = 12
                 },
-                new Monster{Name = "Griffon", HitPoints = 50, AttackModifier = 5, 
-                    AttackPerRound = 2, Damage = 1, DamageModifier = 1, Weapon = 1, AC = 2,
-                    MinACtoAlwaysHit = 7, DamagePerRound = 6
+                new Monster
+                {
+                    Id = 2,
+                    Name = "Ice Toad",
+                    HitPoints = 32,
+                    AttackModifier = 3,
+                    DamageModifier = 1,
+                    Damage = 1,
+                    AC = 11,
+                    AttackPerRound = 1,
                 },
-                new Monster{Name = "Elf", HitPoints = 50, AttackModifier = 5, 
-                    AttackPerRound = 2, Damage = 1, DamageModifier = 1, Weapon = 1, AC = 2,
-                    MinACtoAlwaysHit = 7, DamagePerRound = 6
-                },
+                new Monster
+                {
+                    Id = 3,
+                    Name = "Elf",
+                    HitPoints = 161,
+                    AttackModifier = 5,
+                    AttackPerRound = 2,
+                    Damage = 12,
+                    DamageModifier = 2,
+                    AC = 17
+                }
             });
     } 
 }

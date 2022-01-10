@@ -3,7 +3,33 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DB.Controllers;
 
-public class MonstersController
+[ApiController]
+[Route("[controller]/[action]")]
+public class MonsterController : ControllerBase
+{
+    private readonly MonstersContext _context;
+    public MonsterController(MonstersContext context)
+    {
+        _context = context;
+    }
+
+    [HttpGet]
+    public async Task<Monster?> GetById(int id) => await _context.Monsters.FindAsync(id);
+    
+    [HttpGet]
+    public async Task<IEnumerable<Monster?>> GetAllMonsters() => await _context.Monsters.ToListAsync();
+
+    [HttpGet]
+    public async Task<Monster?> GetMonster()
+    {
+        var countAsync = await _context.Monsters.CountAsync();
+        if (countAsync <= 0) return null;
+        var randomizer = new Random((int) DateTime.Now.Ticks).Next(countAsync);
+        return await _context.Monsters.Skip(randomizer).FirstOrDefaultAsync();
+    }
+}
+
+/*public class MonstersController 
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -50,7 +76,7 @@ public class MonstersController
             dbHero.DamageModifier = request.DamageModifier;
             /*dbHero.FirstName = request.FirstName;
             dbHero.LastName = request.LastName;
-            dbHero.Place = request.Place;*/
+            dbHero.Place = request.Place;#1#
 
             await _context.SaveChangesAsync();
 
@@ -71,4 +97,4 @@ public class MonstersController
         }
 
     }
-}
+}*/

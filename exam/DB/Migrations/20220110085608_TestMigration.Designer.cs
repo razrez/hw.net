@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DB.Migrations
 {
     [DbContext(typeof(MonstersContext))]
-    [Migration("20220110021536_InitMigration")]
-    partial class InitMigration
+    [Migration("20220110085608_TestMigration")]
+    partial class TestMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,8 +25,11 @@ namespace DB.Migrations
 
             modelBuilder.Entity("DB.Monster", b =>
                 {
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<int>("AC")
                         .HasColumnType("int");
@@ -43,61 +46,50 @@ namespace DB.Migrations
                     b.Property<int>("DamageModifier")
                         .HasColumnType("int");
 
-                    b.Property<int>("DamagePerRound")
-                        .HasColumnType("int");
-
                     b.Property<int>("HitPoints")
                         .HasColumnType("int");
 
-                    b.Property<int>("MinACtoAlwaysHit")
-                        .HasColumnType("int");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Weapon")
-                        .HasColumnType("int");
-
-                    b.HasKey("Name");
+                    b.HasKey("Id");
 
                     b.ToTable("Monsters");
 
                     b.HasData(
                         new
                         {
-                            Name = "Goblin",
-                            AC = 2,
+                            Id = 1,
+                            AC = 12,
                             AttackModifier = 5,
-                            AttackPerRound = 2,
-                            Damage = 1,
-                            DamageModifier = 1,
-                            DamagePerRound = 6,
-                            HitPoints = 50,
-                            MinACtoAlwaysHit = 7,
-                            Weapon = 1
+                            AttackPerRound = 1,
+                            Damage = 12,
+                            DamageModifier = 6,
+                            HitPoints = 59,
+                            Name = "Goblin"
                         },
                         new
                         {
-                            Name = "Griffon",
-                            AC = 2,
-                            AttackModifier = 5,
-                            AttackPerRound = 2,
+                            Id = 2,
+                            AC = 11,
+                            AttackModifier = 3,
+                            AttackPerRound = 1,
                             Damage = 1,
                             DamageModifier = 1,
-                            DamagePerRound = 6,
-                            HitPoints = 50,
-                            MinACtoAlwaysHit = 7,
-                            Weapon = 1
+                            HitPoints = 32,
+                            Name = "Ice Toad"
                         },
                         new
                         {
-                            Name = "Elf",
-                            AC = 2,
+                            Id = 3,
+                            AC = 17,
                             AttackModifier = 5,
                             AttackPerRound = 2,
-                            Damage = 1,
-                            DamageModifier = 1,
-                            DamagePerRound = 6,
-                            HitPoints = 50,
-                            MinACtoAlwaysHit = 7,
-                            Weapon = 1
+                            Damage = 12,
+                            DamageModifier = 2,
+                            HitPoints = 161,
+                            Name = "Elf"
                         });
                 });
 #pragma warning restore 612, 618
