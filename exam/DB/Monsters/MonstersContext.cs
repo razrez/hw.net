@@ -4,7 +4,7 @@ namespace DB;
 
 public class MonstersContext : DbContext
 {
-    public DbSet<Monster?> Monsters { get; set; }
+    public DbSet<Monster> Monsters { get; set; }
 
     public MonstersContext(DbContextOptions<MonstersContext> options) : base(options)
     {
