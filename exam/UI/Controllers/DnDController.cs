@@ -36,7 +36,7 @@ public class DnDController : Controller
         //у меня сейчас готовы мой боец и монстр
         
         
-        var e = await _client.PostAsync("https://localhost:7185/Fight",
+        var e = await _client.PostAsync(_logicUrl,
             JsonContent.Create(new FightStartingModel(player, monster!)));
                 
         var log = (await e.Content.ReadFromJsonAsync<FightResult>())!.Log;

@@ -17,7 +17,7 @@ namespace Dnd.BLL.Controllers
         public IActionResult Fight(FightInput input)
         {
             var (player, monster) = input;
-            return new JsonResult(new FightResult(FightsDealer.GetFightLog(player, monster)));
+            return new JsonResult(new FightResult(FightsProvider.LogFighting(player, monster)));
         }
     }
 }

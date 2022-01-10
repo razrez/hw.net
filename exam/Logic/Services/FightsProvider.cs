@@ -5,12 +5,12 @@ using Logic.Models;
 
 namespace Logic.Services
 {
-    public static class FightsDealer
+    public static class FightsProvider
     {
         public static Random Random = new Random((int) DateTime.Now.Ticks);
         
         //all fight
-        public static string GetFightLog(Character player, Character monster)
+        public static string LogFighting(Character player, Character monster)
         {
             var stringBuilder = new StringBuilder();
             while(true)

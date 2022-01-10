@@ -5,7 +5,7 @@ namespace Logic.Services
 {
     public class CharacterCalculator
     {
-        public static CalculatedCharacter CalculateCharacter(Character  character)
+        public static CalculatedCharacter CalculateCharacter(Character character)
         {
             return new CalculatedCharacter
             {
