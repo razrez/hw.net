@@ -8,8 +8,6 @@ public class MonstersContext : DbContext
 
     public MonstersContext(DbContextOptions<MonstersContext> options) : base(options)
     {
-        Database.EnsureDeleted();
-        Database.EnsureCreated();
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
