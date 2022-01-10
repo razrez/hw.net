@@ -8,6 +8,8 @@ public class MonstersContext : DbContext
 
     public MonstersContext(DbContextOptions<MonstersContext> options) : base(options)
     {
+        Database.EnsureDeleted();
+        Database.EnsureCreated();
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -23,6 +25,7 @@ public class MonstersContext : DbContext
                     AttackModifier = 5,
                     AttackPerRound = 1,
                     Damage = 12,
+                    DiceType = 4,
                     DamageModifier = 6,
                     AC = 12
                 },
@@ -34,6 +37,7 @@ public class MonstersContext : DbContext
                     AttackModifier = 3,
                     DamageModifier = 1,
                     Damage = 1,
+                    DiceType = 8,
                     AC = 11,
                     AttackPerRound = 1,
                 },
@@ -45,6 +49,7 @@ public class MonstersContext : DbContext
                     AttackModifier = 5,
                     AttackPerRound = 2,
                     Damage = 12,
+                    DiceType = 6,
                     DamageModifier = 2,
                     AC = 17
                 }

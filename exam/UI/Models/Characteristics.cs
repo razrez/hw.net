@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace UI.Models
+namespace Logic.Models
 {
     public class Characteristics
     {
@@ -21,6 +21,10 @@ namespace UI.Models
         [Required]
         [Range(0, int.MaxValue)]
         public int Damage { get; init; }
+        
+        [Required]
+        [Range(1, int.MaxValue)]
+        public int DiceType { get; set; } 
 
         [Required]
         [Range(0, int.MaxValue)]

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DB.Migrations
 {
     [DbContext(typeof(MonstersContext))]
-    [Migration("20220110085608_TestMigration")]
-    partial class TestMigration
+    [Migration("20220110143555_InitMigration")]
+    partial class InitMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -46,6 +46,9 @@ namespace DB.Migrations
                     b.Property<int>("DamageModifier")
                         .HasColumnType("int");
 
+                    b.Property<int>("DiceType")
+                        .HasColumnType("int");
+
                     b.Property<int>("HitPoints")
                         .HasColumnType("int");
 
@@ -66,6 +69,7 @@ namespace DB.Migrations
                             AttackPerRound = 1,
                             Damage = 12,
                             DamageModifier = 6,
+                            DiceType = 4,
                             HitPoints = 59,
                             Name = "Goblin"
                         },
@@ -77,6 +81,7 @@ namespace DB.Migrations
                             AttackPerRound = 1,
                             Damage = 1,
                             DamageModifier = 1,
+                            DiceType = 8,
                             HitPoints = 32,
                             Name = "Ice Toad"
                         },
@@ -88,6 +93,7 @@ namespace DB.Migrations
                             AttackPerRound = 2,
                             Damage = 12,
                             DamageModifier = 2,
+                            DiceType = 6,
                             HitPoints = 161,
                             Name = "Elf"
                         });

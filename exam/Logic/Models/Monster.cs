@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Logic.Models
 {
-    public class Monster : Characteristics
+    public class Monster : Character
     {
         [Required]
         [MaxLength(50)]

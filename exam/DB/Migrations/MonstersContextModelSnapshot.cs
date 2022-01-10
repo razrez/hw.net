@@ -44,6 +44,9 @@ namespace DB.Migrations
                     b.Property<int>("DamageModifier")
                         .HasColumnType("int");
 
+                    b.Property<int>("DiceType")
+                        .HasColumnType("int");
+
                     b.Property<int>("HitPoints")
                         .HasColumnType("int");
 
@@ -64,6 +67,7 @@ namespace DB.Migrations
                             AttackPerRound = 1,
                             Damage = 12,
                             DamageModifier = 6,
+                            DiceType = 4,
                             HitPoints = 59,
                             Name = "Goblin"
                         },
@@ -75,6 +79,7 @@ namespace DB.Migrations
                             AttackPerRound = 1,
                             Damage = 1,
                             DamageModifier = 1,
+                            DiceType = 8,
                             HitPoints = 32,
                             Name = "Ice Toad"
                         },
@@ -86,6 +91,7 @@ namespace DB.Migrations
                             AttackPerRound = 2,
                             Damage = 12,
                             DamageModifier = 2,
+                            DiceType = 6,
                             HitPoints = 161,
                             Name = "Elf"
                         });

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace UI.Models
+namespace Logic.Models
 {
     public class MyFighter : Characteristics
     {

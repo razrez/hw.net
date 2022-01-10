@@ -1,10 +1,9 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
 
 namespace Logic.Models
 {
-    public class Monster : Characteristics
+    public class MyFighter : Character
     {
         [Required]
         [MaxLength(50)]

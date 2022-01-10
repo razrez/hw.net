@@ -28,7 +28,10 @@ public class Monster
     [Required]
     [Range(1, int.MaxValue)]
     public int Damage { get; set; }
-
+    
+    [Required]
+    [Range(1, int.MaxValue)]
+    public int DiceType { get; set; } 
 
     [Required]
     [Range(1, int.MaxValue)]
