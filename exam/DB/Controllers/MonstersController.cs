@@ -12,15 +12,17 @@ public class MonsterController : ControllerBase
     {
         _context = context;
     }
-
-    [HttpGet]
-    public async Task<Monster?> GetById(int id) => await _context.Monsters.FindAsync(id);
+    
+    //no nulls, db created
     
     [HttpGet]
-    public async Task<IEnumerable<Monster?>> GetAllMonsters() => await _context.Monsters.ToListAsync();
+    public async Task<Monster> GetById(int id) => await _context.Monsters.FindAsync(id);
+    
+    [HttpGet]
+    public async Task<IEnumerable<Monster>> GetAllMonsters() => await _context.Monsters.ToListAsync();
 
     [HttpGet]
-    public async Task<Monster?> GetMonster()
+    public async Task<Monster> GetMonster()
     {
         var countAsync = await _context.Monsters.CountAsync();
         if (countAsync <= 0) return null;
